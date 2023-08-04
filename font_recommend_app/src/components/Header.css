@@ -1,0 +1,17 @@
+.header {
+    background-color: #0054A4;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header__title {
+    font-size: 28px;
+}
+
+.dotoriicon {
+    height: 45px;
+    width: 45px;
+}
