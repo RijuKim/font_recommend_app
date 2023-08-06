@@ -31,7 +31,7 @@ function CardItem(props) {
             <li className='cards__item' onClick={handleCardItemClick}>
                 <div className='cards__item__title'>
                     {/* 타이틀이 있을 경우에만 보여줌 */}
-                    {title && <h5 className='cards__item__title_text' style={{ fontSize: `${fontSize}px`, fontFamily: titleFontFamily }}>{title}</h5>}
+                    {title && <h3 className='cards__item__title_text' style={{ fontSize: `${fontSize}px`, fontFamily: titleFontFamily }}>{title}</h3>}
                 </div>
                 <div>
                     {/* 수평선 */}
@@ -39,7 +39,7 @@ function CardItem(props) {
                 </div>
                 <div className='cards__item__info'>
                     {/* children들 */}
-                    <h5 className='cards__item__text'>{children}, {children2}, {children3}, {children4} <br></br><br></br><br></br>
+                    <h5 className='cards__item__text'>{children}, {children2}, {children3}, {children4} <br></br>
                         {children5}, {children6}, {children7}, {children8}</h5>
                 </div>
             </li>
@@ -48,7 +48,6 @@ function CardItem(props) {
 }
 
 export default CardItem;
-
 
 
 

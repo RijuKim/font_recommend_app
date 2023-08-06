@@ -11,8 +11,8 @@ function PopupCardItem(props) {
     return (
         <>
             <li className='pop_cards__item' onClick={handleCardClick}>
-                <div className='cards__item__title'>
-                    {title && <h5 className='cards__item__title_text'>{title}</h5>}
+                <div className='pop_cards__item__title'>
+                    {title && <h2 className='pop_cards__item__title_text'>{title}</h2>}
                 </div>
                 <div>
                     <hr className='hr_line'></hr>

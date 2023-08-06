@@ -88,6 +88,7 @@ function Cards() {
                 {/* 카드 제목 변경 입력란 */}
                 <div className='change_title_box'>
                     <input
+                        className='change_title_box_input'
                         type='text'
                         value={userInput}
                         onChange={handleUserInputChange}
