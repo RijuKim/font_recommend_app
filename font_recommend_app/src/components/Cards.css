@@ -1,5 +1,5 @@
 .cards {
-    padding: 4rem;
+    padding: 2.5rem;
     background: #fff;
 }
 
@@ -16,6 +16,8 @@
 
 }
 
+
+
 .popup_header {
     display: flex;
 
@@ -26,11 +28,16 @@
     height: 56px;
 }
 
+
+.change_title_box_input {
+    width: 10px;
+}
+
 input[type=text] {
-    width: 500px;
-    height: 50px;
-    font-size: 20px;
-    margin-bottom: 30px;
+    width: 408px;
+    height: 44px;
+    font-size: 16px;
+    margin-bottom: 20px;
     border-radius: 20px;
     padding-left: 2%;
     box-shadow: 0 6px 15px rgba(85, 88, 92, 0.17);
@@ -38,17 +45,16 @@ input[type=text] {
 
 .page_title {
     text-align: left;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 600;
     margin-left: 10%;
     margin-top: 2%;
 }
 
 .page_title2 {
-
     display: flex;
     text-align: left;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 400;
     margin-left: 10%;
 }
@@ -64,7 +70,7 @@ input[type=text] {
 
 .cards__wrapper {
     position: relative;
-    margin: 50px 0 45px;
+    margin: 30px 0 45px;
 }
 
 .cards__items {
@@ -78,8 +84,9 @@ input[type=text] {
     margin: 0 1rem;
     margin-bottom: 15px;
     flex-flow: column;
-    width: 400px;
-    height: 370px;
+    width: 300px;
+    /* height: 270px; */
+    height: max-content;
     background-color: #FBFBFB;
     box-shadow: 0 6px 20px rgba(85, 88, 92, 0.17);
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
@@ -95,14 +102,14 @@ input[type=text] {
 
 
 .cards__item__title {
-    padding: 20px 30px 10px;
+    padding: 20px 30px 5px;
 
 }
 
 .cards__item__title_text {
     color: #252e48;
     font-size: 30px;
-    line-height: 10px;
+    /* line-height: 10px; */
 }
 
 
@@ -112,8 +119,8 @@ input[type=text] {
 
 .cards__item__text {
     color: #252e48;
-    font-size: 18px;
-    line-height: 10px;
+    /* font-size: 12px; */
+    /* line-height: 10px; */
 }
 
 .hr_line {
@@ -127,13 +134,14 @@ input[type=text] {
     display: flex;
     align-items: center;
     width: 20%;
-    height: 56px;
-    transform: scale(1.2);
+    height: 44px;
+    /* transform: scale(1.1); */
 
 }
 
 .font-size-input {
-    width: 200px;
+    width: 156px;
+    margin-left: -30px;
 }
 
 /* 팝업 css */
@@ -160,7 +168,7 @@ input[type=text] {
 .popup_title {
     display: flex;
     text-align: left;
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 600;
     margin-left: 8%;
     /* background-color: yellow; */
@@ -170,7 +178,7 @@ input[type=text] {
 
     display: flex;
     text-align: left;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     margin-left: 1%;
     margin-top: 5px;
@@ -178,18 +186,18 @@ input[type=text] {
 }
 
 .popup_change_title_box {
-    margin-left: 7%;
+    margin-left: 4%;
 }
 
 .pop_cards__item {
     display: flex;
     flex: 1;
     margin: 0 1rem;
-    margin-bottom: 30px;
-    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-top: 15px;
     flex-flow: column;
-    width: 330px;
-    height: 300px;
+    width: 250px;
+    height: 230px;
     background-color: #FBFBFB;
     box-shadow: 0 6px 20px rgba(85, 88, 92, 0.17);
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
@@ -218,7 +226,14 @@ input[type=text] {
     margin-bottom: 24px;
 }
 
+.pop_cards__item__title {
+    padding: 20px 30px 5px;
+}
 
+.pop_cards__item__title_text {
+    color: #252e48;
+    font-size: 28px;
+}
 
 @media only screen and (min-width: 1200px) {
     .content__blog__container {
