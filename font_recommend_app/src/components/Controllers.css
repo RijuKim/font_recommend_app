@@ -1,0 +1,148 @@
+/* Controller */
+.controls{
+    padding: 36px 4rem 4rem 4rem;
+}
+
+.control-container{
+    margin-bottom: 32px;
+}
+
+.page-inform{
+    margin-bottom: 50px;
+}
+
+.select-all-button{
+    display: flex;
+    gap: 4px;
+    margin-left: 20px;
+    margin-right: 16px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.control-items{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 8px;
+}
+
+.mix-button-wrapper{
+    text-align: center;
+}
+
+.mix-button{
+    background-color:#0054A4;
+    color: #fff;
+    border:none;
+    border-radius: 20px;
+    width: 200px;
+    height: 48px;
+    font-size: 24px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+/* ControllerCard */
+.controller-container {
+    display: flex;
+    flex-flow: row;
+}
+
+.controller-wrapper{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    border-width: 2px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.controller-wrapper.checked {
+    border-color: #0054A4;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.control-inform{
+    display: flex;
+    flex-direction: column;
+    margin: 32px 16px 80px;
+    gap: 16px;
+    font-size: 24px;
+    width: 100%;
+    padding-right: 40px;
+}
+
+.controller-bars {
+    width: 100%;
+    text-align: center;
+    margin: 32px 16px 0px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    width: 80px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 24px;
+}
+
+.check-button-wrapper{
+    margin: 32px 32px 0px 32px;
+    display: flex;
+    align-items: baseline;
+}
+
+.check-button{
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.check-button.checked {
+    color: #0054A4;
+}
+
+.check-icon{
+    font-size: 26px;
+    margin: 0;
+}
+
+.check-icon.checked {
+    color: #0054A4;
+}
+
+.minus-button-wrapper{
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.minus-button{
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.minus-icon{
+    font-size: 30px;
+    margin: 0;
+}

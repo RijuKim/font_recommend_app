@@ -70,7 +70,7 @@ input[type=text] {
 
 .cards__wrapper {
     position: relative;
-    margin: 30px 0 45px;
+    margin: 30px 0 16px;
 }
 
 .cards__items {
@@ -264,47 +264,47 @@ input[type=text] {
 @font-face {
     font-family: "고딕";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/한글틀고딕.ttf") format("truetype");
+    src: url("../fonts/한글틀고딕.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "캘리폰트";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/나눔손글씨 장미체.ttf") format("truetype");
+    src: url("../fonts/나눔손글씨 장미체.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "픽셀체";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/DungGeunMo.ttf") format("truetype");
+    src: url("../fonts/DungGeunMo.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "명조";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/H2MJSM.TTF") format("truetype");
+    src: url("../fonts/H2MJSM.TTF") format("truetype");
 }
 
 @font-face {
     font-family: "손글씨";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/KCC김훈체(Windows용).ttf") format("truetype");
+    src: url("../fonts/KCC김훈체(Windows용).ttf") format("truetype");
 }
 
 @font-face {
     font-family: "장식체";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/PyeongChangPeace-Bold.ttf") format("truetype");
+    src: url("../fonts/PyeongChangPeace-Bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "고전체";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/NanumBrush.ttf") format("truetype");
+    src: url("../fonts/NanumBrush.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "탈네모";
     font-weight: 100;
-    src: url("/Users/yeji/font_project/font_recommend_app/font_recommend_app/src/fonts/HANBaekB.ttf") format("truetype");
+    src: url("../fonts/HANBaekB.ttf") format("truetype");
 }

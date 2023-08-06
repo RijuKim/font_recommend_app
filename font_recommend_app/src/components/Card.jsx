@@ -1,7 +1,9 @@
+//Card.jsx
 import React, { useState } from 'react';
 import CardItem from './Carditem';
 import './Cards.css';
-import Popup from './PopupCard';
+import PopupCard from './PopupCard';
+import Controller from './Controller';
 
 // 초기 카드 데이터
 const initialCardData = [
@@ -73,111 +75,121 @@ function Cards() {
     const secondHalf = filteredCardData.slice(Math.ceil(filteredCardData.length / 2));
 
     return (
-        <div className='cards'>
-            <div className='boxs'>
-                {/* 검색 입력란 */}
-                <div className='search_box'>
-                    <input
-                        type='text'
-                        placeholder='모든 폰트 내에서 검색'
-                        value={searchTerm}
-                        onChange={handleInputChange}
+        <div className='body'>
+            <div className='cards'>
+                <div className='boxs'>
+                    {/* 검색 입력란 */}
+                    <div className='search_box'>
+                        <input
+                            type='text'
+                            placeholder='모든 폰트 내에서 검색'
+                            value={searchTerm}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+
+                    {/* 카드 제목 변경 입력란 */}
+                    <div className='change_title_box'>
+                        <input
+                            className='change_title_box_input'
+                            type='text'
+                            value={userInput}
+                            onChange={handleUserInputChange}
+                            placeholder='예시 문구를 적어보세요'
+                        />
+
+                    </div>
+
+                    {/* 글자 크기 조절기 */}
+                    <div className='font-size-adjuster'>
+                        <input
+                            className='font-size-input'
+                            type='range'
+                            id='font-size-input'
+                            min='10'
+                            max='50'
+                            step='1'
+                            value={fontSize}
+                            onChange={handleFontSizeChange}
+                        />
+                        <span>{fontSize}px</span>
+                    </div>
+                </div>
+                <div className='page_inform'>
+                    <div className='page_title'> 대표 폰트</div>
+                    <div className='page_title2'>
+                        섞고 싶은 폰트를 두 가지 이상 선택하세요
+                    </div>
+                </div>
+                <div className='cards__container'>
+                    <div className='cards__wrapper'>
+                        <ul className='cards__items'>
+                            {/* 첫 번째 반 카드 렌더링 */}
+                            {firstHalf.map((item, index) => (
+                                <CardItem
+                                    key={index}
+                                    title={userInput || item.title}
+                                    titlefont={item.titlefont}
+                                    children={item.children}
+                                    children2={item.children2}
+                                    children3={item.children3}
+                                    children4={item.children4}
+                                    children5={item.children5}
+                                    children6={item.children6}
+                                    children7={item.children7}
+                                    children8={item.children8}
+                                    fontSize={fontSize}
+                                    onClick={() => handleCardItemClick(item)}
+                                />
+                            ))}
+                        </ul>
+                        <ul className='cards__items'>
+                            {/* 두 번째 반 카드 렌더링 */}
+                            {secondHalf.map((item, index) => (
+                                <CardItem
+                                    key={index}
+                                    title={userInput || item.title}
+                                    titlefont={item.titlefont}
+                                    children={item.children}
+                                    children2={item.children2}
+                                    children3={item.children3}
+                                    children4={item.children4}
+                                    children5={item.children5}
+                                    children6={item.children6}
+                                    children7={item.children7}
+                                    children8={item.children8}
+                                    fontSize={fontSize}
+                                    onClick={() => handleCardItemClick(item)}
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+                {/* 컨트롤러 */}
+                <div className='page_inform'>
+                    <div className='page_title'> 선택된 폰트</div>
+                    <div className='page_title2'>
+                        각 폰트마다 굵기, 골격, 가중치를 조절하세요
+                    </div>
+                </div>
+                <Controller/>
+
+                {/* 팝업 컴포넌트 */}
+                {popupContent && (
+                    <PopupCard
+                        title={popupContent.title}
+                        children={popupContent.children}
+                        children2={popupContent.children2}
+                        children3={popupContent.children3}
+                        children4={popupContent.children4}
+                        children5={popupContent.children5}
+                        children6={popupContent.children6}
+                        children7={popupContent.children7}
+                        children8={popupContent.children8}
+                        onClose={handleClosePopup}
                     />
-                </div>
-
-                {/* 카드 제목 변경 입력란 */}
-                <div className='change_title_box'>
-                    <input
-                        className='change_title_box_input'
-                        type='text'
-                        value={userInput}
-                        onChange={handleUserInputChange}
-                        placeholder='예시 문구를 적어보세요'
-                    />
-
-                </div>
-
-                {/* 글자 크기 조절기 */}
-                <div className='font-size-adjuster'>
-                    <input
-                        className='font-size-input'
-                        type='range'
-                        id='font-size-input'
-                        min='10'
-                        max='50'
-                        step='1'
-                        value={fontSize}
-                        onChange={handleFontSizeChange}
-                    />
-                    <span>{fontSize}px</span>
-                </div>
+                )}
             </div>
-            <div className='page_inform'>
-                <div className='page_title'> 대표 폰트</div>
-                <div className='page_title2'>
-                    섞고 싶은 폰트를 두 가지 이상 선택하세요
-                </div>
-            </div>
-            <div className='cards__container'>
-                <div className='cards__wrapper'>
-                    <ul className='cards__items'>
-                        {/* 첫 번째 반 카드 렌더링 */}
-                        {firstHalf.map((item, index) => (
-                            <CardItem
-                                key={index}
-                                title={userInput || item.title}
-                                titlefont={item.titlefont}
-                                children={item.children}
-                                children2={item.children2}
-                                children3={item.children3}
-                                children4={item.children4}
-                                children5={item.children5}
-                                children6={item.children6}
-                                children7={item.children7}
-                                children8={item.children8}
-                                fontSize={fontSize}
-                                onClick={() => handleCardItemClick(item)}
-                            />
-                        ))}
-                    </ul>
-                    <ul className='cards__items'>
-                        {/* 두 번째 반 카드 렌더링 */}
-                        {secondHalf.map((item, index) => (
-                            <CardItem
-                                key={index}
-                                title={userInput || item.title}
-                                titlefont={item.titlefont}
-                                children={item.children}
-                                children2={item.children2}
-                                children3={item.children3}
-                                children4={item.children4}
-                                children5={item.children5}
-                                children6={item.children6}
-                                children7={item.children7}
-                                children8={item.children8}
-                                fontSize={fontSize}
-                                onClick={() => handleCardItemClick(item)}
-                            />
-                        ))}
-                    </ul>
-                </div>
-            </div>
-
-            {/* 팝업 컴포넌트 */}
-            {popupContent && (
-                <Popup
-                    title={popupContent.title}
-                    children={popupContent.children}
-                    children2={popupContent.children2}
-                    children3={popupContent.children3}
-                    children4={popupContent.children4}
-                    children5={popupContent.children5}
-                    children6={popupContent.children6}
-                    children7={popupContent.children7}
-                    children8={popupContent.children8}
-                    onClose={handleClosePopup}
-                />
-            )}
         </div>
     );
 }
