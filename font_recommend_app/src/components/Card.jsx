@@ -114,7 +114,7 @@ function Cards() {
                             type='text'
                             value={userInput}
                             onChange={handleUserInputChange}
-                            placeholder='예시 문구를 적어보세요'
+                            placeholder='예시 문구를 입력하세요'
                         />
 
                     </div>
