@@ -1,8 +1,11 @@
+//ControllerCard.jsx
 import React, { useState, useEffect } from 'react';
 import './Controllers.css'
 import { AiOutlineMinusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 
-export default function ControllerCard({ title, chiledren, isSelectChecked, handleSelectClick }) {
+export default function ControllerCard(props) {
+    const { isSelectChecked, selectedFont, onRemoveCard } = props;
+
     // 굵기 조절 상태 관리
     const [thickness, setThickness] = useState(1);
 
@@ -12,7 +15,7 @@ export default function ControllerCard({ title, chiledren, isSelectChecked, hand
     // 가중치 조절 상태 관리
     const [weight, setWeight] = useState(50);
 
-    //check 버튼 클릭 상태 관리
+    // 체크 버튼 클릭 상태 관리
     const [isChecked, setIsChecked] = useState(false);
 
     useEffect(() => {
@@ -34,10 +37,19 @@ export default function ControllerCard({ title, chiledren, isSelectChecked, hand
         setWeight(event.target.value);
     };    
 
-    // "check" 버튼 클릭 핸들러
+    // 체크 버튼 클릭 핸들러
     const handleCheckButtonClick = () => {
         setIsChecked(!isChecked);
     };
+
+    // 삭제 버튼 클릭 핸들러
+    const handleMinusButtonClick = () => {
+        if (typeof onRemoveCard === 'function') {
+            onRemoveCard();
+        }
+    }; 
+
+
 
     return (
         <div className='controller-container'>
@@ -47,7 +59,8 @@ export default function ControllerCard({ title, chiledren, isSelectChecked, hand
                         <AiOutlineCheckCircle className={`check-icon ${isChecked ? 'checked' : ''}`}/></button>
                 </div>
                 <div className='control-inform'>
-                    <div>{title}title</div>
+                    {/* Todo - 선택한 폰트 style로 font-family 변경해줘야함 */}
+                    <div>{selectedFont}</div>
                     <div>예시문구를 적어보세요</div>
                 </div>
                 {/* 굵기, 골격, 가중치 조절기 */}
@@ -95,7 +108,7 @@ export default function ControllerCard({ title, chiledren, isSelectChecked, hand
             </div>
             {/* 선택한 폰트 취소 */}
             <div className='minus-button-wrapper'>
-                <button className='minus-button'>
+                <button className='minus-button' onClick={handleMinusButtonClick}>
                     <AiOutlineMinusCircle className='minus-icon'/>
                 </button>
             </div>

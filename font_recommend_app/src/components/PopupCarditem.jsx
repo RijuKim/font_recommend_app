@@ -2,10 +2,11 @@
 import React from 'react';
 
 function PopupCardItem(props) {
-    const { title, children } = props;
+    const { title, children, getFontDataFromItem } = props;
 
     const handleCardClick = () => {
-        console.log(title); // 클릭한 카드의 타이틀을 콘솔에 출력
+        // console.log(children); // 클릭한 카드의 타이틀을 콘솔에 출력
+        getFontDataFromItem(props.children);
     };
 
     return (

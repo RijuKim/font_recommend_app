@@ -31,6 +31,9 @@ function Cards() {
     // 글자 크기 상태 관리, 초기 글자 크기는 30px로 설정
     const [fontSize, setFontSize] = useState(30);
 
+    //사용자가 선택한 폰트 값 Popup에서 가져오는 상태 관리
+    const [selectedFont, setSelectedFont] = useState('')
+
     // 폰트 혼합 결과 컴포넌트 보여주기 상태 관리
     const [showFontMixResult, setShowFontMixResult] = useState(false);
 
@@ -58,6 +61,12 @@ function Cards() {
     const handleFontSizeChange = (event) => {
         setFontSize(event.target.value);
     };
+
+    // 사용자 선택 폰트 데이터 가져오기 핸들러
+    const getFontDataFromPopCard = (fontData) => {
+        setSelectedFont(fontData);
+        console.log(fontData);
+    }
 
     //폰트 혼합하기 버튼 클릭 핸들러
     const handleMixFontsClick = () => {
@@ -182,7 +191,11 @@ function Cards() {
                         각 폰트마다 굵기, 골격, 가중치를 조절하세요
                     </div>
                 </div>
-                <Controller onResultButtonClick={handleMixFontsClick}/>
+                {console.log("Card에서 저장된 폰트", selectedFont)}
+                <Controller 
+                    onResultButtonClick={handleMixFontsClick} 
+                    selectedFont={selectedFont} 
+                    userInput={userInput}/>
                 {showFontMixResult && (
                     <div>
                         <div className='result_inform_wrapper'>
@@ -223,6 +236,7 @@ function Cards() {
                         children7={popupContent.children7}
                         children8={popupContent.children8}
                         onClose={handleClosePopup}
+                        getFontDataFromPopCard={getFontDataFromPopCard}
                     />
                 )}
             </div>

@@ -15,7 +15,7 @@ export default function ResultItem(props) {
                     className='result-item-context'
                     style={{ fontSize: `${fontSize}px` }}>
                     예시 문구를 입력하세요
-                    {console.log(fontSize)}
+                    {/* {console.log(fontSize)} */}
                 </div>
             </div>
             <hr className='result-hr-line'/>

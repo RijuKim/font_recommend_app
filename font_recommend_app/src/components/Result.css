@@ -1,13 +1,13 @@
 /* ResultItem */
 .result-item-wrapper{
-    margin-top: 40px;
+    margin-top: 16px;
 }
 
 .result-item-container{
     display: flex;
     flex-direction: row;
     gap: 20px;
-    width: 100%;
+    width: 90%;
     height: 100px;
     justify-content: space-around;
     align-items: center;
