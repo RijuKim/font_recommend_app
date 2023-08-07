@@ -1,0 +1,29 @@
+/* ResultItem */
+.result-item-wrapper{
+    margin-top: 40px;
+}
+
+.result-item-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.result-item-number{
+    font-size: 24px;
+}
+
+.result-item-title{
+    font-size: 24px;
+}
+
+.result-hr-line{
+    color: rgb(145, 145, 145);
+    margin-left: 5%;
+    margin-right: 5%;
+    opacity: 0.5;
+}
