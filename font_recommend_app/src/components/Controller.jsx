@@ -6,7 +6,7 @@ import ControllerCard from './ControllerCard';
 import { AiOutlineCheck } from 'react-icons/ai'
 
 export default function Controller(props) {
-    const {onResultButtonClick, selectedFont} = props;
+    const {onResultButtonClick, selectedFont, userInput} = props;
 
     //전체 선택 상태 관리
     const [selectAllChecked, setSelectAllChecked] = useState(false);
@@ -57,6 +57,7 @@ export default function Controller(props) {
                                 <ControllerCard
                                     key={index}
                                     selectedFont={font}
+                                    userInput={userInput}
                                     isSelectChecked={selectAllChecked}
                                     handleSelectClick={handleSelectAllClick}
                                     onRemoveCard={() => handleMinusButtonClick(index)}

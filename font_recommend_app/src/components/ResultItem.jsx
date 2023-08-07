@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ResultItem(props) {
-    const {itemNum, fontSize} = props;
+    const {itemNum, fontSize, userInput} = props;
 
     return (
         <div className='result-item-wrapper'>
@@ -14,8 +14,7 @@ export default function ResultItem(props) {
                 <div 
                     className='result-item-context'
                     style={{ fontSize: `${fontSize}px` }}>
-                    예시 문구를 입력하세요
-                    {/* {console.log(fontSize)} */}
+                    {userInput ? userInput : '예시 문구를 입력하세요'}
                 </div>
             </div>
             <hr className='result-hr-line'/>

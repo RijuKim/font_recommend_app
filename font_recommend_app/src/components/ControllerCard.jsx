@@ -4,7 +4,7 @@ import './Controllers.css'
 import { AiOutlineMinusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 
 export default function ControllerCard(props) {
-    const { isSelectChecked, selectedFont, onRemoveCard } = props;
+    const { isSelectChecked, selectedFont, onRemoveCard, userInput } = props;
 
     // 굵기 조절 상태 관리
     const [thickness, setThickness] = useState(1);
@@ -46,6 +46,7 @@ export default function ControllerCard(props) {
     const handleMinusButtonClick = () => {
         if (typeof onRemoveCard === 'function') {
             onRemoveCard();
+            console.log('ㅇㅇㅇㅇ', userInput)
         }
     }; 
 
@@ -61,7 +62,7 @@ export default function ControllerCard(props) {
                 <div className='control-inform'>
                     {/* Todo - 선택한 폰트 style로 font-family 변경해줘야함 */}
                     <div>{selectedFont}</div>
-                    <div>예시문구를 적어보세요</div>
+                    <div>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
                 </div>
                 {/* 굵기, 골격, 가중치 조절기 */}
                 <div className='controller-bars'>

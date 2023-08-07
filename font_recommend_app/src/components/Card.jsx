@@ -191,7 +191,7 @@ function Cards() {
                         각 폰트마다 굵기, 골격, 가중치를 조절하세요
                     </div>
                 </div>
-                {console.log("Card에서 저장된 폰트", selectedFont)}
+                {console.log("Card에서 저장된 폰트", selectedFont, userInput)}
                 <Controller 
                     onResultButtonClick={handleMixFontsClick} 
                     selectedFont={selectedFont} 
@@ -219,7 +219,9 @@ function Cards() {
                                 <span>{fontSize}px</span>
                             </div>
                         </div>
-                        <Result fontSize={fontSize}/>
+                        <Result 
+                            fontSize={fontSize}
+                            userInput={userInput}/>
                     </div>
                 )}
 
