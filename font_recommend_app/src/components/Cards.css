@@ -6,14 +6,17 @@
 
 .boxs {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    margin-left: 8px;
+    margin-top: 8px;
 }
 
 .search_box {
-    margin-left: 10%;
     margin-bottom: 10px;
-    flex: 1;
+    margin-left: 32px;
     height: 56px;
-
 }
 
 
@@ -24,7 +27,6 @@
 }
 
 .change_title_box {
-    flex: 1;
     height: 56px;
 }
 
@@ -130,18 +132,18 @@ input[type=text] {
     opacity: 0.5;
 }
 
+
 .font-size-adjuster {
+    margin-left: 32px;
     display: flex;
     align-items: center;
     width: 20%;
     height: 44px;
-    /* transform: scale(1.1); */
 
 }
 
 .font-size-input {
-    width: 156px;
-    margin-left: -30px;
+    width: 200px;
 }
 
 /* 팝업 css */
