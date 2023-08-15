@@ -1,3 +1,51 @@
+/* Result */
+.results{
+    padding: 32px 4rem 4rem 4rem;
+}
+
+.result_inform_wrapper{
+    display: flex;
+    gap: 20%;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.result_page_inform{
+    display: flex;
+    flex-direction: column;
+}
+
+.result_page_title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.result_page_title2 {
+    display: flex;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.font-size-adjuster {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 44px;
+    /* transform: scale(1.1); */
+
+}
+
+.font-size-input2 {
+    width: 200px;
+
+}
+
 /* ResultItem */
 .result-item-wrapper{
     margin-top: 16px;

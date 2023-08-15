@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import CardItem from './Carditem';
 import './Cards.css';
 import PopupCard from './PopupCard';
-import Controller from './Controller';
-import Result from './Result';
 
 // 초기 카드 데이터
 const initialCardData = [
@@ -18,7 +16,9 @@ const initialCardData = [
     { title: '캘리폰트', titlefont: '캘리폰트', children: '바탕체', children2: ' 나눔바탕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' }
 ];
 
-function Cards() {
+function Cards(props) {
+    const {getFontDataFromCard} = props;
+
     // 검색어 상태 관리
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -33,9 +33,6 @@ function Cards() {
 
     //사용자가 선택한 폰트 값 Popup에서 가져오는 상태 관리
     const [selectedFont, setSelectedFont] = useState('')
-
-    // 폰트 혼합 결과 컴포넌트 보여주기 상태 관리
-    const [showFontMixResult, setShowFontMixResult] = useState(false);
 
     // 사용자가 입력한 값이 변경될 때마다 상태 업데이트
     const handleUserInputChange = (event) => {
@@ -63,15 +60,9 @@ function Cards() {
     };
 
     // 사용자 선택 폰트 데이터 가져오기 핸들러
-    const getFontDataFromPopCard = (fontData) => {
-        setSelectedFont(fontData);
-        console.log(fontData);
-    }
-
-    //폰트 혼합하기 버튼 클릭 핸들러
-    const handleMixFontsClick = () => {
-        console.log("폰트혼합버튼 클릭됨")
-        setShowFontMixResult(true);
+    const getFontDataFromPopCard = (selectedFont) => {
+        setSelectedFont(selectedFont);
+        getFontDataFromCard(selectedFont);
     }
 
     // 검색된 카드 데이터 필터링
@@ -96,52 +87,57 @@ function Cards() {
     return (
         <div className='body'>
             <div className='cards'>
-                <div className='boxs'>
-                    {/* 검색 입력란 */}
-                    <div className='search_box'>
-                        <input
-                            type='text'
-                            placeholder='모든 폰트 내에서 검색'
-                            value={searchTerm}
-                            onChange={handleInputChange}
-                        />
+                <div className='card_inform_wrapper'>
+                    <div className='card_page_inform'>
+                        <div className='card_page_title'>1. 폰트 선택하기</div>
+                        <div className='card_page_title2'>
+                        먼저 원하는 폰트와 유사한 폰트를 두 가지 이상 선택하세요.
+                        </div>
                     </div>
-
-                    {/* 카드 제목 변경 입력란 */}
-                    <div className='change_title_box'>
-                        <input
-                            className='change_title_box_input'
-                            type='text'
-                            value={userInput}
-                            onChange={handleUserInputChange}
-                            placeholder='예시 문구를 입력하세요'
-                        />
-
-                    </div>
-
-                    {/* 글자 크기 조절기 */}
-                    <div className='font-size-adjuster'>
-                        <input
-                            className='font-size-input'
-                            type='range'
-                            id='font-size-input'
-                            min='10'
-                            max='50'
-                            step='1'
-                            value={fontSize}
-                            onChange={handleFontSizeChange}
-                        />
-                        <span>{fontSize}px</span>
+                    <div>
+                        {/* 검색 입력란 */}
+                        <div className='card-search-box'>
+                            <input
+                                className='card-search-input'
+                                type='text'
+                                placeholder='모든 폰트 내에서 검색'
+                                value={searchTerm}
+                                onChange={handleInputChange}
+                            />
+                        </div>
                     </div>
                 </div>
-                <div className='page_inform'>
-                    <div className='page_title'> 대표 폰트</div>
-                    <div className='page_title2'>
-                        섞고 싶은 폰트를 두 가지 이상 선택하세요
-                    </div>
-                </div>
+
+
                 <div className='cards__container'>
                     <div className='cards__wrapper'>
+                        <div className='boxs'>
+                            {/* 카드 제목 변경 입력란 */}
+                            <div className='change_title_box'>
+                                <input
+                                    className='change_title_box_input'
+                                    type='text'
+                                    value={userInput}
+                                    onChange={handleUserInputChange}
+                                    placeholder='예시 문구를 입력하세요'
+                                />
+
+                            </div>
+                            {/* 글자 크기 조절기 */}
+                            <div className='font-size-adjuster'>
+                                <input
+                                    className='font-size-input'
+                                    type='range'
+                                    id='font-size-input'
+                                    min='10'
+                                    max='50'
+                                    step='1'
+                                    value={fontSize}
+                                    onChange={handleFontSizeChange}
+                                />
+                                <span>{fontSize}px</span>
+                            </div>
+                        </div>
                         <ul className='cards__items'>
                             {/* 첫 번째 반 카드 렌더링 */}
                             {firstHalf.map((item, index) => (
@@ -184,47 +180,7 @@ function Cards() {
                         </ul>
                     </div>
                 </div>
-                {/* 컨트롤러 */}
-                <div className='page_inform'>
-                    <div className='page_title'> 선택된 폰트</div>
-                    <div className='page_title2'>
-                        각 폰트마다 굵기, 골격, 가중치를 조절하세요
-                    </div>
-                </div>
                 {console.log("Card에서 저장된 폰트", selectedFont, userInput)}
-                <Controller 
-                    onResultButtonClick={handleMixFontsClick} 
-                    selectedFont={selectedFont} 
-                    userInput={userInput}/>
-                {showFontMixResult && (
-                    <div>
-                        <div className='result_inform_wrapper'>
-                            <div className='result_page_inform'>
-                                <div className='result_page_title'>폰트 혼합 결과</div>
-                                <div className='result_page_title2'>
-                                    선택한 폰트들의 혼합 결과를 확인하세요!
-                                </div>
-                            </div>
-                            {/* 글자 크기 조절기 */}
-                            <div className='font-size-adjuster2'>
-                                <input
-                                    className='font-size-input2'
-                                    type='range'
-                                    id='font-size-input'
-                                    min='10'
-                                    max='50'
-                                    step='1'
-                                    value={fontSize}
-                                    onChange={handleFontSizeChange} />
-                                <span>{fontSize}px</span>
-                            </div>
-                        </div>
-                        <Result 
-                            fontSize={fontSize}
-                            userInput={userInput}/>
-                    </div>
-                )}
-
                 {/* 팝업 컴포넌트 */}
                 {popupContent && (
                     <PopupCard

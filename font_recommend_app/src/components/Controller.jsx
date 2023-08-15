@@ -6,13 +6,10 @@ import ControllerCard from './ControllerCard';
 import { AiOutlineCheck } from 'react-icons/ai'
 
 export default function Controller(props) {
-    const {onResultButtonClick, selectedFont, userInput} = props;
+    const {onResultButtonClick, selectedFonts, onRemoveFont, userInput} = props;
 
     //전체 선택 상태 관리
     const [selectAllChecked, setSelectAllChecked] = useState(false);
-
-    //사용자 폰트 선택 상태 관리 -> 선택된 폰트들 저장하는 배열
-    const [selectedFonts, setSelectedFonts] = useState([]);
 
     //전체 선택 이벤트 핸들러
     const handleSelectAllClick = () => {
@@ -21,27 +18,23 @@ export default function Controller(props) {
 
     //삭제 버튼 클릭 핸들러
     const handleMinusButtonClick = (index) => {
-        setSelectedFonts(prevSelectedFonts => prevSelectedFonts.filter((_, i) => i !== index));
+        onRemoveFont(index, selectedFonts[index]);
     };
 
     //폰트 혼합하기 버튼 클릭 핸들러
     const handleMixFontsClick = () => {
-        onResultButtonClick(); // Card(부모 컴포넌트)로 클릭이벤트 전달
+        onResultButtonClick(); // Tab(부모 컴포넌트)로 클릭이벤트 전달
     };
-
-    useEffect(() => {
-        if (selectedFont) {
-            console.log('폰트가 선택됨', selectedFont);
-            setSelectedFonts(prevSelectedFonts => [...prevSelectedFonts, selectedFont]); // 선택된 폰트가 바뀔 때마다 배열에 새로운 폰트 추가
-        }
-        return () => {
-            console.log('이전 폰트는 ', selectedFont);
-            console.log('컨트롤러가 생성된 폰트들 ', selectedFonts);
-        }
-    }, [selectedFont]);
 
     return (
         <div className='controls'>
+            {/* 폰트 조절 설명 */}
+            <div className='page-inform'>
+                <div className='page_title'>2. 선택된 폰트 조절</div>
+                <div className='page_title2'>
+                    각 폰트마다 굵기, 골격, 가중치를 조절하세요
+                </div>
+            </div>
             {/* 선택한 폰트 조절 컨테이너 */}
             <button className='select-all-button' onClick={handleSelectAllClick}>
                 <AiOutlineCheck/>전체 선택

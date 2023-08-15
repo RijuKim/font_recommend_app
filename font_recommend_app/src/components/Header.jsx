@@ -5,7 +5,10 @@ function Header() {
     return (
         <div className="header">
             <img className="dotoriicon" alt="도토리아이콘" src="img/dotori_icon.png"></img>
-            <h1 className="header__title">DOTORI</h1>
+            <div className='title-wrapper'>
+                <div className="header-title">MINDFONT</div>
+                <div className="header-title2">내 마음 속 폰트 찾기 AI 시스템</div>
+            </div>
         </div >
     );
 }

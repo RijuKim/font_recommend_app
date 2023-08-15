@@ -1,5 +1,5 @@
 .cards {
-    padding: 2.5rem;
+    padding: 32px 4rem 4rem 4rem;
     background: #fff;
 }
 
@@ -9,16 +9,43 @@
     flex-direction: row;
     justify-content: center;
     gap: 32px;
-    margin-left: 8px;
-    margin-top: 8px;
+    margin: 0px 0px 40px;
 }
 
-.search_box {
+.card_inform_wrapper{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-bottom: 32px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card_page_inform{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_page_title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.card_page_title2 {
+    display: flex;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.card-search-box {
     margin-bottom: 10px;
-    margin-left: 32px;
+    margin-right: 32px;
     height: 56px;
 }
-
 
 
 .popup_header {
@@ -59,6 +86,11 @@ input[type=text] {
     font-size: 24px;
     font-weight: 400;
     margin-left: 10%;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
 }
 
 .cards__container {
@@ -309,54 +341,4 @@ input[type=text] {
     font-family: "탈네모";
     font-weight: 100;
     src: url("../fonts/HANBaekB.ttf") format("truetype");
-}
-
-/* Result */
-
-.result_inform_wrapper{
-    display: flex;
-    gap: 20%;
-    margin-top: 40px;
-    margin-left: 10%;
-    margin-bottom: 32px;
-    align-items: center;
-}
-
-.result_page_inform{
-    display: flex;
-    flex-direction: column;
-
-    /* width: 100%; */
-}
-
-.result_page_title {
-    text-align: left;
-    font-size: 32px;
-    font-weight: 600;
-    /* margin-left: 10%; */
-    /* margin-top: 32px; */
-    width: 100%;
-}
-
-.result_page_title2 {
-    display: flex;
-    text-align: left;
-    font-size: 24px;
-    font-weight: 400;
-    /* margin-left: 10%; */
-    width: 100%;
-}
-
-.font-size-adjuster {
-    display: flex;
-    align-items: center;
-    width: 20%;
-    height: 44px;
-    /* transform: scale(1.1); */
-
-}
-
-.font-size-input2 {
-    width: 200px;
-
 }
