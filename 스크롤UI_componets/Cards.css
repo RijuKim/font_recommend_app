@@ -1,0 +1,362 @@
+.cards {
+    padding: 2.5rem;
+    background: #fff;
+}
+
+
+.boxs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+.search_box {
+    margin-bottom: 10px;
+    margin-left: 32px;
+    height: 56px;
+}
+
+
+
+.popup_header {
+    display: flex;
+
+}
+
+.change_title_box {
+    height: 56px;
+}
+
+
+.change_title_box_input {
+    width: 10px;
+}
+
+input[type=text] {
+    width: 408px;
+    height: 44px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding-left: 2%;
+    box-shadow: 0 6px 15px rgba(85, 88, 92, 0.17);
+}
+
+.page_title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+    margin-left: 10%;
+    margin-top: 32px;
+}
+
+.page_title2 {
+    display: flex;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 10%;
+}
+
+.cards__container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cards__wrapper {
+    position: relative;
+    margin: 30px 0 0px;
+}
+
+.cards__items {
+    margin-bottom: 24px;
+}
+
+
+.cards__item {
+    display: flex;
+    flex: 1;
+    margin: 0 1rem;
+    margin-bottom: 15px;
+    flex-flow: column;
+    width: 300px;
+    /* height: 270px; */
+    height: max-content;
+    background-color: #FBFBFB;
+    box-shadow: 0 6px 20px rgba(85, 88, 92, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.cards__item:hover {
+    transform: scale(1.1);
+}
+
+
+.cards__item__title {
+    padding: 20px 30px 5px;
+
+}
+
+.cards__item__title_text {
+    color: #252e48;
+    font-size: 30px;
+    /* line-height: 10px; */
+}
+
+
+.cards__item__info {
+    padding: 20px 30px 30px;
+}
+
+.cards__item__text {
+    color: #252e48;
+    /* font-size: 12px; */
+    /* line-height: 10px; */
+}
+
+.hr_line {
+    color: rgb(145, 145, 145);
+    margin-left: 5%;
+    margin-right: 5%;
+    opacity: 0.5;
+}
+
+
+.font-size-adjuster {
+    margin-left: 32px;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 44px;
+
+}
+
+.font-size-input {
+    width: 200px;
+}
+
+/* 팝업 css */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup__content {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.popup_title {
+    display: flex;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 600;
+    margin-left: 8%;
+    /* background-color: yellow; */
+}
+
+.popup_title2 {
+
+    display: flex;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 1%;
+    margin-top: 5px;
+    /* background-color: yellow; */
+}
+
+.popup_change_title_box {
+    margin-left: 4%;
+}
+
+.pop_cards__item {
+    display: flex;
+    flex: 1;
+    margin: 0 1rem;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    flex-flow: column;
+    width: 250px;
+    height: 230px;
+    background-color: #FBFBFB;
+    box-shadow: 0 6px 20px rgba(85, 88, 92, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+
+}
+
+.pop_cards__item:hover {
+    transform: scale(1.1);
+}
+
+.popup__container {
+    margin-right: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* max-width: 1120px;
+    width: 90%; */
+    margin: 0 auto;
+}
+
+.popup__items {
+    margin-bottom: 24px;
+}
+
+.pop_cards__item__title {
+    padding: 20px 30px 5px;
+}
+
+.pop_cards__item__title_text {
+    color: #252e48;
+    font-size: 28px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .content__blog__container {
+        width: 84%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .cards__items {
+        display: flex;
+    }
+
+    .popup__items {
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .cards__item {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+
+/* URL 경로 설정 해야 함 */
+@font-face {
+    font-family: "고딕";
+    font-weight: 100;
+    src: url("../fonts/한글틀고딕.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "캘리폰트";
+    font-weight: 100;
+    src: url("../fonts/나눔손글씨 장미체.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "픽셀체";
+    font-weight: 100;
+    src: url("../fonts/DungGeunMo.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "명조";
+    font-weight: 100;
+    src: url("../fonts/H2MJSM.TTF") format("truetype");
+}
+
+@font-face {
+    font-family: "손글씨";
+    font-weight: 100;
+    src: url("../fonts/KCC김훈체(Windows용).ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "장식체";
+    font-weight: 100;
+    src: url("../fonts/PyeongChangPeace-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "고전체";
+    font-weight: 100;
+    src: url("../fonts/NanumBrush.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "탈네모";
+    font-weight: 100;
+    src: url("../fonts/HANBaekB.ttf") format("truetype");
+}
+
+/* Result */
+
+.result_inform_wrapper{
+    display: flex;
+    gap: 20%;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.result_page_inform{
+    display: flex;
+    flex-direction: column;
+
+    /* width: 100%; */
+}
+
+.result_page_title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+    /* margin-left: 10%; */
+    /* margin-top: 32px; */
+    width: 100%;
+}
+
+.result_page_title2 {
+    display: flex;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 400;
+    /* margin-left: 10%; */
+    width: 100%;
+}
+
+.font-size-adjuster {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 44px;
+    /* transform: scale(1.1); */
+
+}
+
+.font-size-input2 {
+    width: 200px;
+
+}
