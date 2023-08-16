@@ -121,7 +121,6 @@ function Cards(props) {
                                     onChange={handleUserInputChange}
                                     placeholder='예시 문구를 입력하세요'
                                 />
-
                             </div>
                             {/* 글자 크기 조절기 */}
                             <div className='font-size-adjuster'>

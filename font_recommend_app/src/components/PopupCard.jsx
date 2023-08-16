@@ -32,7 +32,7 @@ const Popup = (props) => {
         <button onClick={onClose}><FiArrowLeft></FiArrowLeft></button>
         <div className='popup_header'>
           <div className='popup_title'> {title}의 세부 폰트</div>
-          <div className='popup_title2'>섞고 싶은 폰트를 두 가지 이상 선택하세요</div>
+          <div className='popup_title2'>원하는 폰트를 두 가지 이상 선택하세요</div>
           <div className='popup_change_title_box'>
             <input
               type='text'

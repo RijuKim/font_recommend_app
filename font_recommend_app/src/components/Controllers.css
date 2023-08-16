@@ -1,14 +1,38 @@
 /* Controller */
 .controls{
-    padding: 36px 4rem 4rem 4rem;
+    padding: 16px 4rem 4rem 4rem;
 }
 
 .control-container{
     margin-bottom: 32px;
 }
 
-.page-inform{
-    margin-bottom: 50px;
+.control_inform_wrapper{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.control_page_inform{
+    display: flex;
+    flex-direction: column;
+}
+
+.control_page_title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.control_page_title2 {
+    display: flex;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 400;
+    width: 100%;
 }
 
 .select-all-button{

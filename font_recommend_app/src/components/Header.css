@@ -8,6 +8,12 @@
 }
 
 .title-wrapper{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.title-inform-wrapper{
     margin-left: 8px;
 }
 

@@ -29,10 +29,12 @@ export default function Controller(props) {
     return (
         <div className='controls'>
             {/* 폰트 조절 설명 */}
-            <div className='page-inform'>
-                <div className='page_title'>2. 선택된 폰트 조절</div>
-                <div className='page_title2'>
-                    각 폰트마다 굵기, 골격, 가중치를 조절하세요
+            <div className='control_inform_wrapper'>
+                <div className='control_page_inform'>
+                    <div className='control_page_title'>2. 선택된 폰트 조절</div>
+                    <div className='control_page_title2'>
+                        각 폰트마다 굵기, 골격, 가중치를 조절하세요.
+                    </div>
                 </div>
             </div>
             {/* 선택한 폰트 조절 컨테이너 */}

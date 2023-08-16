@@ -68,16 +68,12 @@ export default function Tab() {
         <div>
             {/* 탭 메뉴 */}
             {console.log("Tab에서 저장된 폰트", selectedFont, selectedFonts)}
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className='tab'>
                 {tabs.map(([name], index) => (
                     <div
+                        className={`tab-button ${activeTab === index ? 'active' : ''}`}
                         key={index}
                         onClick={() => handleTabClick(index)}
-                        style={{
-                            padding: '10px 20px',
-                            cursor: 'pointer',
-                            backgroundColor: activeTab === index ? 'lightblue' : 'white',
-                        }}
                     >
                         {name}
                     </div>

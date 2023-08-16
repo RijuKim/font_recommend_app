@@ -1,14 +1,13 @@
 /* Result */
 .results{
-    padding: 32px 4rem 4rem 4rem;
+    padding: 16px 4rem 4rem 4rem;
 }
 
 .result_inform_wrapper{
     display: flex;
-    gap: 20%;
     margin-top: 40px;
     margin-left: 10%;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     align-items: center;
 }
 
@@ -32,12 +31,12 @@
     width: 100%;
 }
 
-.font-size-adjuster {
+.font-size-adjuster2 {
+    margin-left: 32px;
     display: flex;
     align-items: center;
     width: 20%;
     height: 44px;
-    /* transform: scale(1.1); */
 
 }
 
