@@ -154,8 +154,9 @@ ul{
 
 .cards__item__text {
     color: #252e48;
-    /* font-size: 12px; */
-    /* line-height: 10px; */
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hr_line {
@@ -317,7 +318,7 @@ ul{
 @font-face {
     font-family: "명조";
     font-weight: 100;
-    src: url("../fonts/KBIZ\ 한마음명조\ R.ttf") format("truetype");
+    src: url("../fonts/KBIZ\ 한마음명조\ M.ttf") format("truetype");
 }
 
 @font-face {

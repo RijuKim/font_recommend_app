@@ -4,16 +4,16 @@ import CardItem from './Carditem';
 import './Cards.css';
 import PopupCard from './PopupCard';
 
-// 초기 카드 데이터
+// 카테고리 및 대표 폰트들
 const initialCardData = [
-    { title: '고딕', titlefont: '고딕', children: '고딕체', children2: '나눔고딕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
-    { title: '명조', titlefont: '명조', children: '산스체', children2: '나눔고딕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
-    { title: '손글씨', titlefont: '손글씨', children: '명조체', children2: '나눔명조', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
-    { title: '장식체', titlefont: '장식체', children: '바탕체', children2: ' 나눔바탕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
-    { title: '픽셀체', titlefont: '픽셀체', children: '굴림체', children2: ' 나눔굴림', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
-    { title: '고전체', titlefont: '고전체', children: '산스체', children2: ' 나눔고딕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
-    { title: '탈네모', titlefont: '탈네모', children: '명조체', children2: ' 나눔명조', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
-    { title: '캘리폰트', titlefont: '캘리폰트', children: '바탕체', children2: ' 나눔바탕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' }
+    { category: '고딕', titlefont: '맑은 고딕', children: '맑은 고딕', children2: '나눔스퀘어', children3: '타이포 씨고딕180', children4: '휴먼 고딕', children5: '유토이미지 고딕 R', children6: '헬스셋고딕Bold', children7: 'DX모던고딕 RoundBold', children8: 'DX단선고딕 Thin' },
+    { category: '명조', titlefont: 'KBIZ 한마음명조 M', children: 'KBIZ 한마음명조 M', children2: '나눔명조', children3: '제주명조', children4: 'HY견명조', children5: 'DX 신문명조', children6: '빛의계승자체 Regular', children7: '조선일보명조', children8: '함초롬바탕체' },
+    { category: '손글씨', titlefont: '나눔손글씨 다행체', children: '나눔손글씨 다행체', children2: '나눔손글씨 반짝반짝 별', children3: '어비 나현체', children4: '어비 소윤체', children5: '온글잎 안될과학약체', children6: '나눔손글씨 중학생', children7: '나눔손글씨 펜', children8: '나눔손글씨 한윤체' },
+    { category: '장식체', titlefont: 'HS겨울눈꽃체', children: 'HS겨울눈꽃체', children2: 'HS두꺼비체', children3: '가비아 봄바람체', children4: '창원단감아삭체 Bold', children5: '가나초콜릿체', children6: 'HanS 붐붐', children7: '116수박화체', children8: 'DX동화나라 Bold' },
+    { category: '픽셀체', titlefont: '픽셀체', children: '굴림체', children2: ' 나눔굴림', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
+    { category: '고전체', titlefont: '고전체', children: '산스체', children2: ' 나눔고딕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
+    { category: '탈네모', titlefont: '탈네모', children: '명조체', children2: ' 나눔명조', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
+    { category: '캘리폰트', titlefont: '캘리폰트', children: '바탕체', children2: ' 나눔바탕', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' }
 ];
 
 function Cards(props) {
@@ -68,7 +68,7 @@ function Cards(props) {
     // 검색된 카드 데이터 필터링
     const filteredCardData = initialCardData.filter(
         (item) => (
-            item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.children.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.children2.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.children3.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -142,7 +142,7 @@ function Cards(props) {
                             {firstHalf.map((item, index) => (
                                 <CardItem
                                     key={index}
-                                    title={userInput || item.title}
+                                    category={userInput || item.category}
                                     titlefont={item.titlefont}
                                     children={item.children}
                                     children2={item.children2}
@@ -162,7 +162,7 @@ function Cards(props) {
                             {secondHalf.map((item, index) => (
                                 <CardItem
                                     key={index}
-                                    title={userInput || item.title}
+                                    category={userInput || item.category}
                                     titlefont={item.titlefont}
                                     children={item.children}
                                     children2={item.children2}
@@ -183,7 +183,7 @@ function Cards(props) {
                 {/* 팝업 컴포넌트 */}
                 {popupContent && (
                     <PopupCard
-                        title={popupContent.title}
+                        category={popupContent.category}
                         children={popupContent.children}
                         children2={popupContent.children2}
                         children3={popupContent.children3}

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 function PopupCardItem(props) {
-    const { title, children, getFontDataFromItem } = props;
+    const { category, children, getFontDataFromItem } = props;
 
     //폰트 선택여부 상태 관리
     const [isSelected, setIsSelected] = useState(false);
@@ -22,7 +22,7 @@ function PopupCardItem(props) {
         <>
             <li className='pop_cards__item' onClick={handleCardClick}>
                 <div className='pop_cards__item__title'>
-                    {title && <h2 className='pop_cards__item__title_text'>{title}</h2>}
+                    {category && <h2 className='pop_cards__item__title_text'>{category}</h2>}
                 </div>
                 <div>
                     <hr className='hr_line'></hr>
