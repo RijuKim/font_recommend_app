@@ -17,7 +17,7 @@ const initialCardData = [
 ];
 
 function Cards(props) {
-    const {getFontDataFromCard} = props;
+    const {getFontDataFromCard, getUserInputDataFromCard} = props;
 
     // 검색어 상태 관리
     const [searchTerm, setSearchTerm] = useState('');
@@ -37,6 +37,7 @@ function Cards(props) {
     // 사용자가 입력한 값이 변경될 때마다 상태 업데이트
     const handleUserInputChange = (event) => {
         setUserInput(event.target.value);
+        getUserInputDataFromCard(event.target.value);
     };
 
     // 검색어 입력 변경 핸들러

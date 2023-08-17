@@ -62,7 +62,7 @@ export default function ControllerCard(props) {
                 <div className='control-inform'>
                     {/* Todo - 선택한 폰트 style로 font-family 변경해줘야함 */}
                     <div>{selectedFont}</div>
-                    <div>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
+                    <div style={{fontFamily: `${selectedFont}`}}>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
                 </div>
                 {/* 굵기, 골격, 가중치 조절기 */}
                 <div className='controller-bars'>

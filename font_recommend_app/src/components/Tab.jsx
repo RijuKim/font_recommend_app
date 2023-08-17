@@ -15,6 +15,9 @@ export default function Tab() {
     //사용자 폰트 선택 상태 관리 -> 선택된 폰트들 저장하는 배열
     const [selectedFonts, setSelectedFonts] = useState([]);
 
+    //Card에서 받아온 사용자 입력 예시 문구 데이터 저장 상태관리
+    const [userInput, setUserInput] = useState('')
+
     // 폰트 혼합 결과 컴포넌트 보여주기 상태 관리 -> API 연결 후 데이터 전송용으로 사용
     // const [showFontMixResult, setShowFontMixResult] = useState(false);
 
@@ -27,6 +30,12 @@ export default function Tab() {
     const getFontDataFromCard = (fontData) => {
         setSelectedFont(fontData);
         console.log(fontData);
+    }
+
+    // 사용자 입력 예시 문구 데이터 가져오기 핸들러
+    const getUserInputDataFromCard = (userInput) => {
+        setUserInput(userInput);
+        console.log("입력문구임ㅋ", userInput);
     }
 
     //seletedFonts 배열에서 선택한 폰트 삭제 핸들러
@@ -56,11 +65,12 @@ export default function Tab() {
 
     // 탭 메뉴에 대한 정보: [이름, 컴포넌트]
     const tabs = [
-        ['선택', <Card getFontDataFromCard={getFontDataFromCard}/>],
+        ['선택', <Card getFontDataFromCard={getFontDataFromCard} getUserInputDataFromCard={getUserInputDataFromCard}/>],
         ['조절', <Controller 
             selectedFonts={selectedFonts} 
             onRemoveFont={handleRemoveFont} 
-            onResultButtonClick={handleMixFontsClick}/>],
+            onResultButtonClick={handleMixFontsClick}
+            userInput={userInput}/>],
         ['결과', <Result />],
     ];
 
