@@ -46,20 +46,19 @@ const Popup = (props) => {
           <div className='popup__wrapper'>
             <ul className='cards__items'>
               {console.log("Item에서 가져온 폰트", selectedFont)}
-              <PopupCardItem category={children} children={userInput || children} getFontDataFromItem={getFontDataFromItem}/>
-              <PopupCardItem category={children2} children={userInput || children2} getFontDataFromItem={getFontDataFromItem}/>
-              <PopupCardItem category={children3} children={userInput || children3} getFontDataFromItem={getFontDataFromItem}/>
-              <PopupCardItem category={children4} children={userInput || children4} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children} children={children} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children2} children={children2} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children3} children={children3} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children4} children={children4} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
             </ul>
             <ul className='cards__items'>
-              <PopupCardItem category={children5} children={userInput || children5} getFontDataFromItem={getFontDataFromItem}/>
-              <PopupCardItem category={children6} children={userInput || children6} getFontDataFromItem={getFontDataFromItem}/>
-              <PopupCardItem category={children7} children={userInput || children7} getFontDataFromItem={getFontDataFromItem}/>
-              <PopupCardItem category={children8} children={userInput || children8} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children5} children={children5} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children6} children={children6} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children7} children={children7} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
+              <PopupCardItem category={children8} children={children8} userInput={userInput} getFontDataFromItem={getFontDataFromItem}/>
             </ul>
           </div>
         </div>
-
       </div>
     </div >
   );

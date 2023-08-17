@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 function PopupCardItem(props) {
-    const { category, children, getFontDataFromItem } = props;
+    const { category, children, userInput, getFontDataFromItem } = props;
 
     //폰트 선택여부 상태 관리
     const [isSelected, setIsSelected] = useState(false);
@@ -22,13 +22,13 @@ function PopupCardItem(props) {
         <>
             <li className='pop_cards__item' onClick={handleCardClick}>
                 <div className='pop_cards__item__title'>
-                    {category && <h2 className='pop_cards__item__title_text'>{category}</h2>}
+                    {category && <h2 className='pop_cards__item__title_text' style={{fontFamily: children}}>{category}</h2>}
                 </div>
                 <div>
                     <hr className='hr_line'></hr>
                 </div>
-                <div className='cards__item__info'>
-                    <h5 className='cards__item__text'>{children}</h5>
+                <div className='pop_cards__item__info'>
+                    <h5 className='pop_cards__item__info' style={{fontFamily: children}}>{userInput || '예시 문구를 적어보세요'}</h5>
                 </div>
             </li>
         </>

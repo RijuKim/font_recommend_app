@@ -149,7 +149,7 @@ ul{
 
 
 .cards__item__info {
-    padding: 20px 30px 30px;
+    padding: 0px 30px 30px;
 }
 
 .cards__item__text {
@@ -157,6 +157,7 @@ ul{
     font-size: 16px;
     display: flex;
     flex-direction: column;
+    gap: 4px;
 }
 
 .hr_line {
@@ -195,8 +196,6 @@ ul{
 
 .popup__content {
     background-color: white;
-    width: 80%;
-    height: 80%;
     padding: 20px;
     border-radius: 8px;
 }
@@ -269,6 +268,11 @@ ul{
 .pop_cards__item__title_text {
     color: #252e48;
     font-size: 28px;
+}
+
+.pop_cards__item__info{
+    padding: 0px 0px 0px 16px;
+    font-size: 16px;
 }
 
 @media only screen and (min-width: 1200px) {
