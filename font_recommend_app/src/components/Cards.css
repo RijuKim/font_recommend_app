@@ -311,35 +311,35 @@ ul{
 @font-face {
     font-family: "픽셀체";
     font-weight: 100;
-    src: url("../fonts/DungGeunMo.ttf") format("truetype");
+    src: url("../fonts/둥근모꼴.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "명조";
     font-weight: 100;
-    src: url("../fonts/H2MJSM.TTF") format("truetype");
+    src: url("../fonts/KBIZ\ 한마음명조\ R.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "손글씨";
     font-weight: 100;
-    src: url("../fonts/KCC김훈체(Windows용).ttf") format("truetype");
+    src: url("../fonts/KCC김훈체.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "장식체";
     font-weight: 100;
-    src: url("../fonts/PyeongChangPeace-Bold.ttf") format("truetype");
+    src: url("../fonts/평창평화체\ Bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "고전체";
     font-weight: 100;
-    src: url("../fonts/NanumBrush.ttf") format("truetype");
+    src: url("../fonts/나눔손글씨\ 붓.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "탈네모";
     font-weight: 100;
-    src: url("../fonts/HANBaekB.ttf") format("truetype");
+    src: url("../fonts/함렡체\ Regular.ttf") format("truetype");
 }
