@@ -6,10 +6,16 @@ import ControllerCard from './ControllerCard';
 import { AiOutlineCheck } from 'react-icons/ai'
 
 export default function Controller(props) {
-    const {onResultButtonClick, selectedFonts, onRemoveFont, userInput} = props;
+    const {onResultButtonClick, selectedFonts, getWeightFromController, onRemoveFont, userInput} = props;
 
     //전체 선택 상태 관리
-    const [selectAllChecked, setSelectAllChecked] = useState(false);
+    const [selectAllChecked, setSelectAllChecked] = useState(true);
+
+    //단일 선택 상태 관리
+    const [checkFonts, setCheckFonts] = useState(selectedFonts);
+
+    //ControllerCard로부터 사용자 입력 가중치 상태 관리
+    const [weight, setWeight] = useState(1);
 
     //전체 선택 이벤트 핸들러
     const handleSelectAllClick = () => {
@@ -25,6 +31,23 @@ export default function Controller(props) {
     const handleMixFontsClick = () => {
         onResultButtonClick(); // Tab(부모 컴포넌트)로 클릭이벤트 전달
     };
+
+    //ControllerCard로부터 사용자 입력 가중치 가져오기&Tab으로 보내기 핸들러
+    const getWeightFromControllerCard = (weight) => {
+        setWeight(weight);
+        getWeightFromController(weight);
+    }
+
+    const getFontCheck = (font, isSelected) => {
+        if (isSelected) {
+            setCheckFonts([...checkFonts, font]);
+            console.log(checkFonts);
+        } else {
+            setCheckFonts(checkFonts.filter(selectedFont => selectedFont !== font));
+            console.log(checkFonts);
+        }
+    }
+
 
     return (
         <div className='controls'>
@@ -53,6 +76,8 @@ export default function Controller(props) {
                                     key={index}
                                     selectedFont={font}
                                     userInput={userInput}
+                                    getFontCheck={getFontCheck}
+                                    getWeightFromControllerCard={getWeightFromControllerCard}
                                     isSelectChecked={selectAllChecked}
                                     handleSelectClick={handleSelectAllClick}
                                     onRemoveCard={() => handleMinusButtonClick(index)}

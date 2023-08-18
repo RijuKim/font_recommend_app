@@ -4,7 +4,7 @@ import './Result.css';
 import ResultItem from './ResultItem';
 
 export default function Result(props) {
-    // const { userInput } = props;
+    const { apiResponse } = props;
 
     // 글자 크기 상태 관리, 초기 글자 크기는 30px로 설정
     const [fontSize, setFontSize] = useState(30);
@@ -60,8 +60,8 @@ export default function Result(props) {
                 </div>
             </div>
             {/* 10개의 ResultItem 생성 */}
-            {[...Array(10)].map((_, index) => (
-                <ResultItem key={index} itemNum={index+1} fontSize={fontSize} userInput={userInput} />
+            {apiResponse.map((fontName, index) => (
+                <ResultItem key={index} fontName={fontName} itemNum={index+1} fontSize={fontSize} userInput={userInput} />
             ))}
         </div>
     );

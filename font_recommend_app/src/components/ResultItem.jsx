@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ResultItem(props) {
-    const {itemNum, fontSize, userInput} = props;
+    const {itemNum, fontSize, userInput, fontName} = props;
 
     return (
         <div className='result-item-wrapper'>
@@ -9,11 +9,11 @@ export default function ResultItem(props) {
                 <div className='result-item-number'>{itemNum}</div>
                 <div 
                     className='result-item-title'>
-                        폰트 제목
+                        {fontName}
                 </div>
                 <div 
                     className='result-item-context'
-                    style={{ fontSize: `${fontSize}px` }}>
+                    style={{ fontSize: `${fontSize}px`, fontFamily: `${fontName}`}}>
                     {userInput ? userInput : '예시 문구를 입력하세요'}
                 </div>
             </div>

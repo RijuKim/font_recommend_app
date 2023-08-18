@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import Cards from './components/Card';
 import Header from './components/Header';
 import Tab from './components/Tab';
+import ApiTest from "./components/ApiTest"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

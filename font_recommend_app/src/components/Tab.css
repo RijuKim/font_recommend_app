@@ -19,3 +19,11 @@
 .tab-button:hover {
     background-color: lightblue; /* 마우스 오버 시 배경색 변경 */
 }
+
+.loading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    gap: 40px;
+}

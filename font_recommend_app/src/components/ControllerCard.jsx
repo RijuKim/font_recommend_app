@@ -4,7 +4,7 @@ import './Controllers.css'
 import { AiOutlineMinusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 
 export default function ControllerCard(props) {
-    const { isSelectChecked, selectedFont, onRemoveCard, userInput } = props;
+    const { isSelectChecked, selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
 
     // 굵기 조절 상태 관리
     const [thickness, setThickness] = useState(1);
@@ -35,11 +35,22 @@ export default function ControllerCard(props) {
     // 가중치 조절 핸들러
     const handleWeightChange = (event) => {
         setWeight(event.target.value);
+        getWeightFromControllerCard(event.target.value);
+        console.log(weight);
     };    
 
     // 체크 버튼 클릭 핸들러
     const handleCheckButtonClick = () => {
         setIsChecked(!isChecked);
+        if (!isChecked) {
+            // 체크 버튼이 선택되었을 때 selectedFonts에 폰트 추가
+            // 선택된 폰트에 대한 처리를 할 수 있도록 부모 컴포넌트의 함수 호출
+            getFontCheck(selectedFont, false);
+        } else {
+            // 체크 버튼이 취소되었을 때 selectedFonts에서 폰트 삭제
+            // 선택된 폰트에 대한 처리를 할 수 있도록 부모 컴포넌트의 함수 호출
+            getFontCheck(selectedFont, true);
+        }
     };
 
     // 삭제 버튼 클릭 핸들러
