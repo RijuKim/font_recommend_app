@@ -21,7 +21,7 @@ export default function Tab() {
     const [userInput, setUserInput] = useState('')
 
     //Controller에서 받아온 사용자 입력 weight 데이터 저장 상태관리
-    const [weight, setWeight] = useState(1);
+    const [weights, setWeights] = useState(1);
 
     //로딩 상태 관리
     const [isLoading, setIsLoading] = useState(false);
@@ -46,8 +46,9 @@ export default function Tab() {
     }
 
     //Controller에서 받아온 사용자 입력 weight 데이터 가져오기 핸들러
-    const getWeightFromController = (weight) => {
-        setWeight(weight);
+    const getWeightFromController = (weights) => {
+        setWeights(weights);
+        console.log("tab의 가중치", weights)
     }
 
     //seletedFonts 배열에서 선택한 폰트 삭제 핸들러
@@ -80,7 +81,10 @@ export default function Tab() {
 
     const fetchDataFromAPI = () => {
         // Flask API에 GET 요청을 보냅니다.
-        axios.post('http://localhost:8000/font_recommend_test', {font_names: selectedFonts})
+        axios.post('http://localhost:8000/font_recommend_test', {
+            font_names: selectedFonts,
+            weights: weights
+        })
         .then(response => {
             setApiResponse(response.data);
 

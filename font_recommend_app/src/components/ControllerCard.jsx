@@ -4,7 +4,7 @@ import './Controllers.css'
 import { AiOutlineMinusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 
 export default function ControllerCard(props) {
-    const { isSelectChecked, selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
+    const { isSelectChecked, index, selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
 
     // 굵기 조절 상태 관리
     const [thickness, setThickness] = useState(1);
@@ -13,7 +13,7 @@ export default function ControllerCard(props) {
     const [skel, setSkel] = useState(50);
 
     // 가중치 조절 상태 관리
-    const [weight, setWeight] = useState(50);
+    const [weight, setWeight] = useState(5);
 
     // 체크 버튼 클릭 상태 관리
     const [isChecked, setIsChecked] = useState(false);
@@ -35,7 +35,7 @@ export default function ControllerCard(props) {
     // 가중치 조절 핸들러
     const handleWeightChange = (event) => {
         setWeight(event.target.value);
-        getWeightFromControllerCard(event.target.value);
+        getWeightFromControllerCard(index, event.target.value);
         console.log(weight);
     };    
 
@@ -57,7 +57,6 @@ export default function ControllerCard(props) {
     const handleMinusButtonClick = () => {
         if (typeof onRemoveCard === 'function') {
             onRemoveCard();
-            console.log('ㅇㅇㅇㅇ', userInput)
         }
     }; 
 
@@ -77,6 +76,19 @@ export default function ControllerCard(props) {
                 </div>
                 {/* 굵기, 골격, 가중치 조절기 */}
                 <div className='controller-bars'>
+                    <div className='controller-weight'>
+                        <span>가중치</span>
+                        <input
+                            className='controller-weight-input'
+                            type='range'
+                            min='1'
+                            max='10'
+                            step='1'
+                            value={weight}
+                            onChange={handleWeightChange}
+                        />
+                        <span>{weight}</span>
+                    </div>
                     <div className='controller-bar'>
                         <span>굵기</span>
                         <input
@@ -102,19 +114,6 @@ export default function ControllerCard(props) {
                             onChange={handleSkelChange}
                         />
                         <span>{skel}%</span>
-                    </div>
-                    <div className='controller-weight'>
-                        <span>가중치</span>
-                        <input
-                            className='controller-weight-input'
-                            type='range'
-                            min='0'
-                            max='100'
-                            step='1'
-                            value={weight}
-                            onChange={handleWeightChange}
-                        />
-                        <span>{weight}%</span>
                     </div>
                 </div>
             </div>
