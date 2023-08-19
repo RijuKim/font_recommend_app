@@ -15,7 +15,8 @@ export default function Controller(props) {
     const [checkFonts, setCheckFonts] = useState(selectedFonts);
 
     //ControllerCard로부터 사용자 입력 가중치 상태 관리
-    const [weight, setWeight] = useState(1);
+    const initialWeights = new Array(selectedFonts.length).fill(5); // 사용자가 선택한 폰트의 개수에 맞춰서 초기 가중치 배열 생성
+    const [weights, setWeights] = useState(initialWeights);
 
     //전체 선택 이벤트 핸들러
     const handleSelectAllClick = () => {
@@ -33,11 +34,19 @@ export default function Controller(props) {
     };
 
     //ControllerCard로부터 사용자 입력 가중치 가져오기&Tab으로 보내기 핸들러
-    const getWeightFromControllerCard = (weight) => {
-        setWeight(weight);
-        getWeightFromController(weight);
+    const getWeightFromControllerCard = (index, weight) => {
+        setWeights(prevWeights => {
+            const newWeights = [...prevWeights];
+            newWeights[index] = parseInt(weight);
+            return newWeights;
+        });
+
+        // 부모 컴포넌트로 가중치 배열 전달
+        getWeightFromController(weights);
     }
 
+
+    //체크 버튼 클릭 핸들러
     const getFontCheck = (font, isSelected) => {
         if (isSelected) {
             setCheckFonts([...checkFonts, font]);
@@ -74,6 +83,7 @@ export default function Controller(props) {
                             selectedFonts.map((font, index) => (
                                 <ControllerCard
                                     key={index}
+                                    index={index}
                                     selectedFont={font}
                                     userInput={userInput}
                                     getFontCheck={getFontCheck}
