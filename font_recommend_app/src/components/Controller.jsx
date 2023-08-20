@@ -14,9 +14,10 @@ export default function Controller(props) {
     //단일 선택 상태 관리
     const [checkFonts, setCheckFonts] = useState(selectedFonts);
 
-    //ControllerCard로부터 사용자 입력 가중치 상태 관리
-    const initialWeights = new Array(selectedFonts.length).fill(5); // 사용자가 선택한 폰트의 개수에 맞춰서 초기 가중치 배열 생성
-    const [weights, setWeights] = useState(initialWeights);
+    // //ControllerCard로부터 사용자 입력 가중치 상태 관리
+    // const initialWeights = new Array(selectedFonts.length).fill(5); // 사용자가 선택한 폰트의 개수에 맞춰서 초기 가중치 배열 생성
+    // const [weights, setWeights] = useState(initialWeights);
+    const [weights, setWeights] = useState([]);
 
     //전체 선택 이벤트 핸들러
     const handleSelectAllClick = () => {
@@ -33,15 +34,33 @@ export default function Controller(props) {
         onResultButtonClick(); // Tab(부모 컴포넌트)로 클릭이벤트 전달
     };
 
-    //ControllerCard로부터 사용자 입력 가중치 가져오기&Tab으로 보내기 핸들러
-    const getWeightFromControllerCard = (index, weight) => {
-        weights[index] = parseInt(weight);
-        setWeights([...weights]);
-        console.log(weights);
+    //selectedFonts가 변경될 때마다 weights업데이트
+    useEffect(() => {
+        const InitialWeights = new Array(selectedFonts.length).fill(5);
+        setWeights(InitialWeights);
+
+    }, [selectedFonts]);
+
+    //업데이트된 weights값 넘겨주기
+    useEffect(() => {
         // 부모 컴포넌트로 가중치 배열 전달
         getWeightFromController(weights);
-    }
+
+    }, [weights]);
+
     
+
+    //ControllerCard로부터 사용자 입력 가중치 가져오기&Tab으로 보내기 핸들러
+    const getWeightFromControllerCard = (index, weight) => {
+
+        //ControllerCard로부터 사용자 입력 가중치 상태 관리
+        weights[index] = parseInt(weight);
+        setWeights([...weights]);
+
+        // 부모 컴포넌트로 가중치 배열 전달
+        // getWeightFromController(updatedWeights);
+    }
+
     /* 기존 코드(가중치 디폴트 값 안 넘어옴)
         const getWeightFromControllerCard = (index, weight) => {
             setWeights(prevWeights => {

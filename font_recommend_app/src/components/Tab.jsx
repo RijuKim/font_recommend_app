@@ -70,11 +70,17 @@ export default function Tab() {
     
         if (selectedFont) {
             console.log('폰트가 선택됨', selectedFont);
-            setSelectedFonts(prevSelectedFonts => [...prevSelectedFonts, selectedFont]);
+            setSelectedFonts(prevSelectedFonts  => [...prevSelectedFonts , selectedFont]);
         }
+        // console.log('현재 컨트롤러가 가지고 있는 선택된 폰트들:', selectedFonts);
+    
+    }, [selectedFont]);
+
+    useEffect(() => {
     
         console.log('현재 컨트롤러가 가지고 있는 선택된 폰트들:', selectedFonts);
-    }, [selectedFont]);
+    
+    }, [selectedFonts]);
 
     // !폰트추천 시스템 api에서 데이터 받기
     const [apiResponse, setApiResponse] = useState('');
