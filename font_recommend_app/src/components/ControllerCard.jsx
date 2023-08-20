@@ -32,13 +32,22 @@ export default function ControllerCard(props) {
         setSkel(event.target.value);
     };
     
-    // 가중치 조절 핸들러
-    const handleWeightChange = (event) => {
+    // 가중치 조절 핸들러(기존코드)
+    /*const handleWeightChange = (event) => {
         setWeight(event.target.value);
         getWeightFromControllerCard(index, event.target.value);
         console.log(weight);
-    };    
+    };  */  
 
+    // 가중치 조절 핸들러(기존코드랑 동일)
+    const handleWeightChange = (event) => {
+      
+        const newWeight = event.target.value;
+        setWeight(newWeight); // 로컬 상태로 가중치 업데이트
+        getWeightFromControllerCard(index, newWeight); // 부모 컴포넌트로 가중치 업데이트 전달
+        console.log(newWeight); // 로컬 상태로 업데이트된 가중치 출력
+    
+    };    
     // 체크 버튼 클릭 핸들러
     const handleCheckButtonClick = () => {
         setIsChecked(!isChecked);

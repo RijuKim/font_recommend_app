@@ -35,17 +35,26 @@ export default function Controller(props) {
 
     //ControllerCard로부터 사용자 입력 가중치 가져오기&Tab으로 보내기 핸들러
     const getWeightFromControllerCard = (index, weight) => {
-        setWeights(prevWeights => {
-            const newWeights = [...prevWeights];
-            newWeights[index] = parseInt(weight);
-            return newWeights;
-        });
-
+        weights[index] = parseInt(weight);
+        setWeights([...weights]);
+        console.log(weights);
         // 부모 컴포넌트로 가중치 배열 전달
         getWeightFromController(weights);
     }
-
-
+    
+    /* 기존 코드(가중치 디폴트 값 안 넘어옴)
+        const getWeightFromControllerCard = (index, weight) => {
+            setWeights(prevWeights => {
+                const newWeights = [...prevWeights];
+                newWeights[index] = parseInt(weight);
+                return newWeights;
+            });
+    
+            // 부모 컴포넌트로 가중치 배열 전달
+            getWeightFromController(weights);
+        }
+    
+*/
     //체크 버튼 클릭 핸들러
     const getFontCheck = (font, isSelected) => {
         if (isSelected) {
@@ -56,7 +65,7 @@ export default function Controller(props) {
             console.log(checkFonts);
         }
     }
-
+    
 
     return (
         <div className='controls'>
