@@ -15,9 +15,8 @@ export default function Controller(props) {
     const [checkFonts, setCheckFonts] = useState(selectedFonts);
 
     // //ControllerCard로부터 사용자 입력 가중치 상태 관리
-    // const initialWeights = new Array(selectedFonts.length).fill(5); // 사용자가 선택한 폰트의 개수에 맞춰서 초기 가중치 배열 생성
-    // const [weights, setWeights] = useState(initialWeights);
     const [weights, setWeights] = useState([]);
+    // const [weights, setWeights] = useState(InitialWeights);
 
     //전체 선택 이벤트 핸들러
     const handleSelectAllClick = () => {
@@ -38,8 +37,9 @@ export default function Controller(props) {
     useEffect(() => {
         const InitialWeights = new Array(selectedFonts.length).fill(5);
         setWeights(InitialWeights);
-
     }, [selectedFonts]);
+
+
 
     //업데이트된 weights값 넘겨주기
     useEffect(() => {

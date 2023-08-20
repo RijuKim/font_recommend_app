@@ -31,7 +31,9 @@ export default function Tab() {
 
     // 탭을 클릭했을 때 실행되는 함수
     const handleTabClick = (index) => {
-        setActiveTab(index);
+       
+         setActiveTab(index);
+        
     };
 
     // 사용자 선택 폰트 데이터 가져오기 핸들러
@@ -62,6 +64,12 @@ export default function Tab() {
     const handleMixFontsClick = () => {
         setIsLoading(true); // 로딩 상태 시작
         fetchDataFromAPI();
+    }
+    //폰트 혼합하기 버튼 클릭 핸들러, 클릭 시 폰트 추천 시스템 api 호출
+     const handleGoBackClick = () => {
+        setSelectedFonts([]);
+        setWeights(1);
+        setActiveTab(0); // "선택" 탭으로 변경
     }
     
 
@@ -113,7 +121,8 @@ export default function Tab() {
             onRemoveFont={handleRemoveFont} 
             onResultButtonClick={handleMixFontsClick}
             userInput={userInput}/>],
-        ['결과', <Result apiResponse={apiResponse}/>],
+        ['결과', <Result apiResponse={apiResponse}
+        goBackButtonClick={handleGoBackClick}/>],
     ];
 
 
