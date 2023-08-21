@@ -15,7 +15,7 @@ const cssContent = fontFiles
         font-family: '${fontName}';
         src: url('fonts/${fontFile}') format('truetype');
       }
-    `;
+    `
   })
   .join('\n');
 

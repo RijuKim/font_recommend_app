@@ -13,7 +13,7 @@
     margin: 0px 0px 40px;
 }
 
-.card_inform_wrapper{
+.card_inform_wrapper {
     display: flex;
     margin-top: 40px;
     margin-left: 10%;
@@ -22,7 +22,7 @@
     justify-content: space-between;
 }
 
-.card_page_inform{
+.card_page_inform {
     display: flex;
     flex-direction: column;
 }
@@ -89,7 +89,7 @@ input[type=text] {
     margin-left: 10%;
 }
 
-ul{
+ul {
     padding: 0;
     margin: 0;
 }
@@ -270,7 +270,7 @@ ul{
     font-size: 28px;
 }
 
-.pop_cards__item__info{
+.pop_cards__item__info {
     padding: 0px 0px 0px 16px;
     font-size: 16px;
 }
@@ -347,4 +347,18 @@ ul{
     font-family: "탈네모";
     font-weight: 100;
     src: url("../fonts/함렡체\ Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "수박화체";
+    font-weight: 100;
+    src: url("../fonts/116수박화체.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "조선";
+    font-weight: 100;
+    src: url("../fonts/조선일보명조.woff") format("woff");
 }
