@@ -74,3 +74,19 @@
     margin-right: 5%;
     opacity: 0.5;
 }
+
+.go-back-button-wrapper{
+    text-align: right;
+}
+
+.go-back-button{
+    background-color:#0054A4;
+    color: #fff;
+    border:none;
+    border-radius: 20px;
+    width: 200px;
+    height: 48px;
+    font-size: 24px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}

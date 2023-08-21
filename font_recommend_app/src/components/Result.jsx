@@ -4,7 +4,7 @@ import './Result.css';
 import ResultItem from './ResultItem';
 
 export default function Result(props) {
-    const { apiResponse } = props;
+    const { apiResponse,goBackButtonClick } = props;
 
     // 글자 크기 상태 관리, 초기 글자 크기는 30px로 설정
     const [fontSize, setFontSize] = useState(30);
@@ -22,6 +22,11 @@ export default function Result(props) {
         setUserInput(event.target.value);
     };
 
+   //선택 탭으로 돌아가기 버튼 클릭 핸들러
+   const handleGoBackClick = () => {
+    goBackButtonClick(); // Tab(부모 컴포넌트)로 클릭이벤트 전달
+};
+   
     
     return (
         <div className='results'>
@@ -32,7 +37,9 @@ export default function Result(props) {
                         원하는 폰트 결과를 확인하세요!
                     </div>
                 </div>
+                
             </div>
+            
             <div className='boxs'>
                 {/* 카드 제목 변경 입력란 */}
                 <div className='change_title_box'>
@@ -58,11 +65,19 @@ export default function Result(props) {
                         />
                     <span>{fontSize}px</span>
                 </div>
+                {/*선택 탭으로 돌아가는 버튼 */}
+            <div className='go-back-button-wrapper'>
+                    <button className='go-back-button' onClick={handleGoBackClick}>
+                    다시 선택하기
+                        </button>    
+                </div>
             </div>
             {/* 10개의 ResultItem 생성 */}
             {apiResponse.map((fontName, index) => (
                 <ResultItem key={index} fontName={fontName} itemNum={index+1} fontSize={fontSize} userInput={userInput} />
             ))}
+            
+           
         </div>
     );
 }
