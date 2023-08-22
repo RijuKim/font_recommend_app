@@ -26,6 +26,8 @@ export default function Result(props) {
    const handleGoBackClick = () => {
     goBackButtonClick(); // Tab(부모 컴포넌트)로 클릭이벤트 전달
 };
+    //폰트 적용테스트용
+    const testFont = ['116앵무부리','116수박화체','12롯데마트드림Bold'];
    
     
     return (
@@ -76,6 +78,12 @@ export default function Result(props) {
             {apiResponse.map((fontName, index) => (
                 <ResultItem key={index} fontName={fontName} itemNum={index+1} fontSize={fontSize} userInput={userInput} />
             ))}
+            <div>
+                <h1>테스트 글꼴</h1>
+            {testFont.map((fontName, index) => (
+                <ResultItem key={index} fontName={fontName} itemNum={index+10} fontSize={fontSize} userInput={userInput} />
+            ))}
+            </div>
             
            
         </div>

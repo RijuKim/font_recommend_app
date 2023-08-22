@@ -71,7 +71,8 @@ export default function ControllerCard(props) {
         }
     }; 
 
-
+    // 만약 fontName이 숫자로 시작하는 경우에 _를 붙여 fontFamily를 지정
+    const modifiedSelectedFont = /^[0-9]/.test(selectedFont) ? `_${selectedFont}` : selectedFont;
 
     return (
         <div className='controller-container'>
@@ -83,7 +84,7 @@ export default function ControllerCard(props) {
                 <div className='control-inform'>
                     {/* Todo - 선택한 폰트 style로 font-family 변경해줘야함 */}
                     <div>{selectedFont}</div>
-                    <div style={{fontFamily: `${selectedFont}`}}>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
+                    <div style={{fontFamily: `${modifiedSelectedFont}`}}>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
                 </div>
                 {/* 굵기, 골격, 가중치 조절기 */}
                 <div className='controller-bars'>

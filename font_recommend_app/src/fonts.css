@@ -1,6 +1,11 @@
 @font-face {
-  font-family: '116수박화체';
-  src: url('fonts/116수박화체.ttf') format('truetype');
+  font-family: "_116수박화체";
+  src: url('fonts/116수박화체.ttf') format('truetype'),
+  url('fonts/116수박화체.woff2') format('woff2'),
+  url('fonts/116수박화체.woff') format('woff');
+
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* @font-face {
@@ -9,43 +14,52 @@
 } */
 
 @font-face {
-  font-family: '116앵무부리';
+  font-family: '_116앵무부리';
   src: url('fonts/116앵무부리.ttf') format('truetype');
 }
 
 
+/* @font-face {
+  font-family: '_12롯데마트드림Bold';
+  src: url('fonts/12롯데마트드림Bold.ttf') format('truetype'),
+  url('fonts/12롯데마트드림Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+  
+} */
 @font-face {
-  font-family: '12롯데마트드림Bold';
-  src: url('fonts/12롯데마트드림Bold.ttf') format('truetype');
+  font-family: '_12롯데마트드림Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff') format('woff');
 }
 
-
 @font-face {
-  font-family: '12롯데마트드림Light';
+  font-family: '_12롯데마트드림Light';
   src: url('fonts/12롯데마트드림Light.ttf') format('truetype');
 }
 
 
 @font-face {
-  font-family: '12롯데마트드림Medium';
+  font-family: '_12롯데마트드림Medium';
   src: url('fonts/12롯데마트드림Medium.ttf') format('truetype');
 }
 
 
 @font-face {
-  font-family: '12롯데마트행복Bold';
+  font-family: '_12롯데마트행복Bold';
   src: url('fonts/12롯데마트행복Bold.ttf') format('truetype');
 }
 
 
 @font-face {
-  font-family: '12롯데마트행복Light';
+  font-family: '_12롯데마트행복Light';
   src: url('fonts/12롯데마트행복Light.ttf') format('truetype');
 }
 
 
 @font-face {
-  font-family: '12롯데마트행복Medium';
+  font-family: '_12롯데마트행복Medium';
   src: url('fonts/12롯데마트행복Medium.ttf') format('truetype');
 }
 
@@ -2454,8 +2468,12 @@
 
 @font-face {
   font-family: '행복고흥L';
-  src: url('fonts/행복고흥L.ttf') format('truetype');
+  src: url('fonts/행복고흥L.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
+
 
 
 @font-face {

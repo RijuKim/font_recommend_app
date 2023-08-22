@@ -7,7 +7,13 @@ function CardItem(props) {
     const { category, titlefont, children, children2, children3, children4, children5, children6, children7, children8, onClick, fontSize } = props;
 
     // 각 카테고리와 children에 해당하는 폰트 패밀리를 설정
-    const childrenFontFamilies = [children, children2, children3, children4, children5, children6, children7, children8] || 'sans-serif';; 
+    const childrenFontFamilies = [children, children2, children3, children4, children5, children6, children7, children8] || 'sans-serif';
+
+    //fontfamily 속성명에 숫자가 맨 앞에 오는 경우 
+    const updatedChildrenFontFamilies = childrenFontFamilies.map(value =>
+        typeof value === 'string' && !isNaN(value[0]) ? '_' + value : value
+    );
+    
 
     // Card 아이템을 클릭했을 때 처리하는 함수를 정의
     const handleCardItemClick = () => {
@@ -31,7 +37,7 @@ function CardItem(props) {
                     {/* children들 */}
                     <div className='cards__item__text'>
                     {childrenFontFamilies.map((font, index) => (
-                        <div key={index} style={{ fontFamily: font }}>{font}</div>
+                        <div key={index} style={{ fontFamily: updatedChildrenFontFamilies[index] }}>{font}</div>
                     ))}
                     </div>  
                 </div>

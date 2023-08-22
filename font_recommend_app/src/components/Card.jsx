@@ -10,7 +10,7 @@ const initialCardData = [
     { category: '명조', titlefont: 'KBIZ 한마음명조 M', children: 'KBIZ 한마음명조 M', children2: '나눔명조', children3: '제주명조', children4: 'HY견명조', children5: 'DX신문명조', children6: '빛의계승자체 Regular', children7: '조선일보명조', children8: '함초롬바탕체' },
     { category: '손글씨', titlefont: '나눔손글씨 다행체', children: '나눔손글씨 다행체', children2: '나눔손글씨 반짝반짝 별', children3: '어비 나현체', children4: '어비 소윤체', children5: '온글잎 안될과학약체', children6: '나눔손글씨 중학생', children7: '나눔손글씨 펜', children8: '나눔손글씨 한윤체' },
     { category: '장식체', titlefont: 'HS겨울눈꽃체', children: 'HS겨울눈꽃체', children2: 'HS두꺼비체', children3: '가비아 봄바람체', children4: '창원단감아삭체 Bold', children5: '가나초콜릿체', children6: 'HanS 붐붐', children7: '116수박화체', children8: 'DX동화나라 Bold' },
-    { category: '픽셀체', titlefont: '픽셀체', children: '굴림체', children2: ' 나눔굴림', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
+    { category: '픽셀체', titlefont: '픽셀체', children: '116앵무부리', children2: ' 나눔굴림', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
     { category: '고전체', titlefont: '고전체', children: '산스체', children2: ' 나눔고딕', children3: '나눔고딕', children4: '116watermelon', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
     { category: '탈네모', titlefont: '탈네모', children: '명조체', children2: ' 나눔명조', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
     { category: '캘리폰트', titlefont: '캘리폰트', children: '수박화체', children2: '조선', children3: '12롯데마트드림Light', children4: '수박수박', children5: '116앵무부리', children6: '나눔고딕', children7: '나눔고딕', children8: '헬스' }

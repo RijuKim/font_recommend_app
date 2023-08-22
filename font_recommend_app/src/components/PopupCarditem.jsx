@@ -6,6 +6,7 @@ function PopupCardItem(props) {
 
     //폰트 선택여부 상태 관리
     const [isSelected, setIsSelected] = useState(false);
+    const modifiedChildren = /^[0-9]/.test(children) ? `_${children}` : children;
 
     const handleCardClick = () => {
         const confirmMessage = `${children} 폰트를 선택하시겠습니까?`;
@@ -22,13 +23,13 @@ function PopupCardItem(props) {
         <>
             <li className='pop_cards__item' onClick={handleCardClick}>
                 <div className='pop_cards__item__title'>
-                    {category && <h2 className='pop_cards__item__title_text' style={{fontFamily: children}}>{category}</h2>}
+                    {category && <h2 className='pop_cards__item__title_text' style={{fontFamily: modifiedChildren}}>{category}</h2>}
                 </div>
                 <div>
                     <hr className='hr_line'></hr>
                 </div>
                 <div className='pop_cards__item__info'>
-                    <h5 className='pop_cards__item__info' style={{fontFamily: children}}>{userInput || '예시 문구를 적어보세요'}</h5>
+                    <h5 className='pop_cards__item__info' style={{fontFamily: modifiedChildren}}>{userInput || '예시 문구를 적어보세요'}</h5>
                 </div>
             </li>
         </>
