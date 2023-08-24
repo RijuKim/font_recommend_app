@@ -45,14 +45,21 @@
 }
 
 
-@font-face {
+/* @font-face {
   font-family: '_12롯데마트행복Light';
-  src: url('fonts/12롯데마트행복Light.woff') format('woff');
+  src: url('fonts/12롯데마트행복Light.woff') format('woff'),
+  url('fonts/12롯데마트행복Light.ttf') format('ttf');
   font-style: normal;
   font-weight: normal;
+} */
+
+@font-face {
+  font-family: '_12롯데마트행복Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2') format('woff2'), 
+  url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff') format('woff');
 }
-
-
 
 @font-face {
   font-family: '_12롯데마트행복Medium';
@@ -62,7 +69,7 @@
 
 @font-face {
   font-family: 'DX경필명조 Bold';
-  src: url('fonts/DX경필명조B.ttf') format('truetype');
+  src: url('fonts/DX경필명조 Bold.woff2') format('woff2');
 }
 
 
@@ -92,7 +99,7 @@
 
 @font-face {
   font-family: 'DX모던고딕 Bold';
-  src: url('fonts/DX모던고딕 Bold.ttf') format('truetype');
+  src: url('fonts/DX모던고딕 Bold.woff2') format('woff2');
 }
 
 
@@ -337,13 +344,14 @@
 
 @font-face {
   font-family: 'HY신명조';
-  src: url('fonts/HY신명조.ttf') format('truetype');
+  src: url('fonts/HY신명조.woff') format('woff');
 }
 
 
 @font-face {
   font-family: 'HY얕은샘물M';
-  src: url('fonts/HY얕은샘물M.ttf') format('truetype');
+  src: url('fonts/HY얕은샘물M.ttf') format('truetype'),
+  url('fonts/HY얕은샘물M.woff') format('woff');
 }
 
 
@@ -1868,24 +1876,41 @@
 }
 
 
-@font-face {
+/* @font-face {
   font-family: '유토이미지 고딕 B';
   src: url('fonts/유토이미지 고딕 B.woff') format('woff');
+} */
+@font-face {
+  font-family: '유토이미지 고딕 B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-@font-face {
+/* @font-face {
   font-family: '유토이미지 고딕 L';
   src: url('fonts/유토이미지 고딕 L.woff2') format('woff2');
  
-}
-
+} */
 
 @font-face {
-  font-family: '유토이미지 고딕 R';
-  src: url('fonts/유토이미지 고딕 R.woff') format('woff');
+  font-family: '유토이미지 고딕 L';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGL.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
+
+/* @font-face {
+  font-family: '유토이미지 고딕 R';
+  src: url('fonts/유토이미지 고딕 R.woff') format('woff');
+} */
+@font-face {
+  font-family: '유토이미지 고딕 R';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGR.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: '유토이미지 별나라달님체';
