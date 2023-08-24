@@ -598,25 +598,30 @@
 
 @font-face {
   font-family: '강한육군 Bold Vert';
-  src: url('fonts/강한육군 Bold Vert.ttf') format('truetype');
+  src: url('fonts/강한육군 Bold Vert.ttf') format('truetype'),
+  url('fonts/강한육군 Bold Vert.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '강한육군 Bold';
-  src: url('fonts/강한육군 Bold.ttf') format('truetype');
+  src: url('fonts/강한육군 Bold.ttf') format('truetype'),
+  url('fonts/강한육군 Bold.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '강한육군 Medium Vert';
-  src: url('fonts/강한육군 Medium Vert.ttf') format('truetype');
+  src: url('fonts/강한육군 Medium Vert.ttf') format('truetype'),
+  url('fonts/강한육군 Medium Vert.woff') format('woff');
+  ;
 }
 
 
 @font-face {
   font-family: '강한육군 Medium';
-  src: url('fonts/강한육군 Medium.ttf') format('truetype');
+  src: url('fonts/강한육군 Medium.ttf') format('truetype'),
+  url('fonts/강한육군 Medium.woff') format('woff');;
 }
 
 
@@ -700,7 +705,8 @@
 
 @font-face {
   font-family: '국립박물관문화재단클래식M';
-  src: url('fonts/국립박물관문화재단클래식M.ttf') format('truetype');
+  src: url('fonts/국립박물관문화재단클래식M.ttf') format('truetype'),
+  url('fonts/국립박물관문화재단클래식M.woff') format('woff');
 }
 
 
@@ -1143,7 +1149,8 @@
 
 @font-face {
   font-family: '동그라미재단B';
-  src: url('fonts/동그라미재단B.ttf') format('truetype');
+  src: url('fonts/동그라미재단B.ttf') format('truetype'),
+  url('fonts/동그라미재단B.woff') format('woff');
 }
 
 
@@ -1916,19 +1923,22 @@
 
 @font-face {
   font-family: '이순신돋움체B';
-  src: url('fonts/이순신돋움체B.ttf') format('truetype');
+  src: url('fonts/이순신돋움체B.ttf') format('truetype'),
+  url('fonts/이순신돋움체B.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '이순신돋움체L';
-  src: url('fonts/이순신돋움체L.ttf') format('truetype');
+  src: url('fonts/이순신돋움체L.ttf') format('truetype'),
+  url('fonts/이순신돋움체L.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '이순신돋움체M';
-  src: url('fonts/이순신돋움체M.ttf') format('truetype');
+  src: url('fonts/이순신돋움체M.ttf') format('truetype'),
+  url('fonts/이순신돋움체M.woff') format('woff');;
 }
 
 
@@ -2324,7 +2334,8 @@
 
 @font-face {
   font-family: '한글틀고딕';
-  src: url('fonts/한글틀고딕.ttf') format('truetype');
+  src: url('fonts/한글틀고딕.ttf') format('truetype'),
+  url('fonts/한글틀고딕.woff') format('woff');
 }
 
 
@@ -2444,19 +2455,22 @@
 
 @font-face {
   font-family: '해수체B';
-  src: url('fonts/해수체B.ttf') format('truetype');
+  src: url('fonts/해수체B.ttf') format('truetype'),
+  url('fonts/해수체B.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '해수체L';
-  src: url('fonts/해수체L.ttf') format('truetype');
+  src: url('fonts/해수체L.ttf') format('truetype'),
+  url('fonts/해수체L.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '해수체M';
-  src: url('fonts/해수체M.ttf') format('truetype');
+  src: url('fonts/해수체M.ttf') format('truetype'),
+  url('fonts/해수체M.woff') format('woff');
 }
 
 
@@ -2490,13 +2504,15 @@
 
 @font-face {
   font-family: '헬스셋고딕Bold';
-  src: url('fonts/헬스셋고딕Bold.woff') format('woff');
+  src: url('fonts/헬스셋고딕Bold.woff') format('woff'),
+  url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetGothicBold.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '헬스셋고딕Light';
-  src: url('fonts/헬스셋고딕Light.ttf') format('truetype');
+  src: url('fonts/헬스셋고딕Light.ttf') format('truetype'),
+  url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetGothicLight.woff') format('woff');
 }
 
 
