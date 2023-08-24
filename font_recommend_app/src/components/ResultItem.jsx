@@ -11,7 +11,8 @@ export default function ResultItem(props) {
             <div className='result-item-container'>
                 <div className='result-item-number'>{itemNum}</div>
                 <div 
-                    className='result-item-title'>
+                    className='result-item-title'
+                    style={{ fontFamily: `${modifiedFontName}`}}>
                         {fontName}
                 </div>
                 <div 
