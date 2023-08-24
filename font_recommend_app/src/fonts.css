@@ -8,10 +8,6 @@
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: '116수박화체';
-  src: url('fonts/116수박화체.woff') format('woff');
-} */
 
 @font-face {
   font-family: '_116앵무부리';
@@ -19,14 +15,6 @@
 }
 
 
-/* @font-face {
-  font-family: '_12롯데마트드림Bold';
-  src: url('fonts/12롯데마트드림Bold.ttf') format('truetype'),
-  url('fonts/12롯데마트드림Bold.woff') format('woff');
-  font-style: normal;
-  font-weight: 700;
-  
-} */
 @font-face {
   font-family: '_12롯데마트드림Bold';
   font-style: normal;
@@ -34,15 +22,20 @@
   src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff') format('woff');
 }
 
+
 @font-face {
   font-family: '_12롯데마트드림Light';
-  src: url('fonts/12롯데마트드림Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '_12롯데마트드림Medium';
-  src: url('fonts/12롯데마트드림Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff') format('woff');
 }
 
 
@@ -54,8 +47,11 @@
 
 @font-face {
   font-family: '_12롯데마트행복Light';
-  src: url('fonts/12롯데마트행복Light.ttf') format('truetype');
+  src: url('fonts/12롯데마트행복Light.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
 }
+
 
 
 @font-face {
@@ -66,13 +62,13 @@
 
 @font-face {
   font-family: 'DX경필명조 Bold';
-  src: url('fonts/DX경필명조 Bold.ttf') format('truetype');
+  src: url('fonts/DX경필명조B.ttf') format('truetype');
 }
 
 
 @font-face {
   font-family: 'DX국민시대 Regular';
-  src: url('fonts/DX국민시대 Regular.ttf') format('truetype');
+  src: url('fonts/DX국민시대.ttf') format('truetype');
 }
 
 
@@ -145,6 +141,9 @@
   font-family: 'DX설레임2 Medium';
   src: url('fonts/DX설레임2 Medium.ttf') format('truetype');
 }
+
+
+
 
 
 @font-face {
@@ -230,17 +229,27 @@
 }
 
 
-@font-face {
+/* @font-face {
   font-family: 'EBS주시경L';
   src: url('fonts/EBS주시경L.ttf') format('truetype');
+} */
+@font-face {
+  font-family: 'EBS주시경L';
+  src: url('fonts/EBS주시경L.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-@font-face {
+/* @font-face {
   font-family: 'EBS주시경M';
   src: url('fonts/EBS주시경M.ttf') format('truetype');
+} */
+@font-face {
+  font-family: 'EBS주시경M';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/EBSJSKMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-
 
 @font-face {
   font-family: 'HS겨울눈꽃체';
@@ -1303,11 +1312,18 @@
 }
 
 
-@font-face {
+/* @font-face {
   font-family: '부산체';
   src: url('fonts/부산체.ttf') format('truetype');
-}
-
+} */
+@font-face {
+  font-family: '부산체';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/govs/busan/Busan/Busan.woff2') format('woff2'),
+  url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/govs/busan/Busan/Busan.woff') format('woff');
+  }
+  
 
 @font-face {
   font-family: '비트로 코어체';
@@ -1567,6 +1583,7 @@
 }
 
 
+
 @font-face {
   font-family: '스포카 한 산스 Bold';
   src: url('fonts/스포카 한 산스 Bold.ttf') format('truetype');
@@ -1752,10 +1769,17 @@
   src: url('fonts/영도체.ttf') format('truetype');
 }
 
-
+/* 
 @font-face {
   font-family: '영양군 음식디미방체';
   src: url('fonts/영양군 음식디미방체.ttf') format('truetype');
+} */
+
+@font-face {
+  font-family: '영양군 음식디미방체';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/dimibang_new.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -1839,20 +1863,16 @@
 
 @font-face {
   font-family: '유토이미지 고딕 B';
-  src: url('fonts/유토이미지 고딕 B.ttf') format('truetype');
+  src: url('fonts/유토이미지 고딕 B.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '유토이미지 고딕 L';
-  src: url('fonts/유토이미지 고딕 L.ttf') format('truetype');
+  src: url('fonts/유토이미지 고딕 L.woff2') format('woff2');
+ 
 }
 
-
-@font-face {
-  font-family: '유토이미지 고딕 R';
-  src: url('fonts/유토이미지 고딕 R.ttf') format('truetype');
-}
 
 @font-face {
   font-family: '유토이미지 고딕 R';
@@ -1938,6 +1958,7 @@
 }
 
 
+
 @font-face {
   font-family: '전주완판본 각체 L';
   src: url('fonts/전주완판본 각체 L.ttf') format('truetype');
@@ -1950,21 +1971,32 @@
 }
 
 
+
 @font-face {
   font-family: '전주완판본 순체 B';
-  src: url('fonts/전주완판본 순체 B.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/JeonjuSunB.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
 }
 
+/* @font-face {
+  font-family: '전주완판본 순체 L';
+  src: url('fonts/전주완판본 순체 L.ttf') format('truetype');
+} */
 
 @font-face {
   font-family: '전주완판본 순체 L';
-  src: url('fonts/전주완판본 순체 L.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/JeonjuSunL.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
 
 @font-face {
   font-family: '전주완판본 순체 R';
-  src: url('fonts/전주완판본 순체 R.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/JeonjuSunR.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 

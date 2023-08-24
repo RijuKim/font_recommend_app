@@ -10,10 +10,12 @@ export default function ResultItem(props) {
         <div className='result-item-wrapper'>
             <div className='result-item-container'>
                 <div className='result-item-number'>{itemNum}</div>
+                
                 <div 
                     className='result-item-title'>
                         {fontName}
                 </div>
+            
                 <div 
                     className='result-item-context'
                     style={{ fontSize: `${fontSize}px`, fontFamily: `${modifiedFontName}`}}>
