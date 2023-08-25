@@ -1,8 +1,8 @@
 @font-face {
   font-family: "_116수박화체";
   src: url('fonts/116수박화체.ttf') format('truetype'),
-  url('fonts/116수박화체.woff2') format('woff2'),
-  url('fonts/116수박화체.woff') format('woff');
+    url('fonts/116수박화체.woff2') format('woff2'),
+    url('fonts/116수박화체.woff') format('woff');
 
   font-weight: normal;
   font-style: normal;
@@ -57,8 +57,8 @@
   font-family: '_12롯데마트행복Light';
   font-style: normal;
   font-weight: 300;
-  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2') format('woff2'), 
-  url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff') format('woff');
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2') format('woff2'),
+    url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff') format('woff');
 }
 
 @font-face {
@@ -290,31 +290,36 @@
 
 @font-face {
   font-family: 'HY 강 B';
-  src: url('fonts/HY 강 B.ttf') format('truetype');
+  src: url('fonts/HY 강 B.ttf') format('truetype'),
+    url('fonts/HY\ 강\ B.woff') format('woff');
 }
 
 
 @font-face {
   font-family: 'HY 강 M';
-  src: url('fonts/HY 강 M.ttf') format('truetype');
+  src: url('fonts/HY 강 M.ttf') format('truetype'),
+    url('fonts/HY\ 강\ M.woff') format('woff');
 }
 
 
 @font-face {
   font-family: 'HY 그래픽';
-  src: url('fonts/HY 그래픽.ttf') format('truetype');
+  src: url('fonts/HY 그래픽.ttf') format('truetype'),
+    url('fonts/HY\ 그래픽.woff') format('woff');
 }
 
 
 @font-face {
   font-family: 'HY 바다 L';
-  src: url('fonts/HY 바다 L.ttf') format('truetype');
+  src: url('fonts/HY 바다 L.ttf') format('truetype'),
+    url('fonts/HY\ 바다\ L.woff') format('woff');
 }
 
 
 @font-face {
   font-family: 'HY 바다 M';
-  src: url('fonts/HY 바다 M.ttf') format('truetype');
+  src: url('fonts/HY 바다 M.ttf') format('truetype'),
+    url('fonts/HY\ 바다\ M.woff') format('woff');
 }
 
 
@@ -351,7 +356,7 @@
 @font-face {
   font-family: 'HY얕은샘물M';
   src: url('fonts/HY얕은샘물M.ttf') format('truetype'),
-  url('fonts/HY얕은샘물M.woff') format('woff');
+    url('fonts/HY얕은샘물M.woff') format('woff');
 }
 
 
@@ -375,7 +380,8 @@
 
 @font-face {
   font-family: 'Headline';
-  src: url('fonts/Headline.ttf') format('truetype');
+  src: url('fonts/Headline.ttf') format('truetype'),
+    url('fonts/Headline.woff') format('woff');
 }
 
 
@@ -516,10 +522,10 @@
   src: url('fonts/THE명품굴림B.ttf') format('truetype');
 }
 
-
 @font-face {
   font-family: 'THE선인장';
-  src: url('fonts/THE선인장.ttf') format('truetype');
+  src: url('fonts/THE선인장.ttf') format('truetype'),
+    url('fonts/THE선인장.woff') format('woff');
 }
 
 
@@ -616,21 +622,21 @@
 @font-face {
   font-family: '강한육군 Bold Vert';
   src: url('fonts/강한육군 Bold Vert.ttf') format('truetype'),
-  url('fonts/강한육군 Bold Vert.woff') format('woff');
+    url('fonts/강한육군 Bold Vert.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '강한육군 Bold';
   src: url('fonts/강한육군 Bold.ttf') format('truetype'),
-  url('fonts/강한육군 Bold.woff') format('woff');
+    url('fonts/강한육군 Bold.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '강한육군 Medium Vert';
   src: url('fonts/강한육군 Medium Vert.ttf') format('truetype'),
-  url('fonts/강한육군 Medium Vert.woff') format('woff');
+    url('fonts/강한육군 Medium Vert.woff') format('woff');
   ;
 }
 
@@ -638,7 +644,8 @@
 @font-face {
   font-family: '강한육군 Medium';
   src: url('fonts/강한육군 Medium.ttf') format('truetype'),
-  url('fonts/강한육군 Medium.woff') format('woff');;
+    url('fonts/강한육군 Medium.woff') format('woff');
+  ;
 }
 
 
@@ -723,7 +730,7 @@
 @font-face {
   font-family: '국립박물관문화재단클래식M';
   src: url('fonts/국립박물관문화재단클래식M.ttf') format('truetype'),
-  url('fonts/국립박물관문화재단클래식M.woff') format('woff');
+    url('fonts/국립박물관문화재단클래식M.woff') format('woff');
 }
 
 
@@ -1064,7 +1071,8 @@
 
 @font-face {
   font-family: '넥센타이어체 Bold';
-  src: url('fonts/넥센타이어체 Bold.ttf') format('truetype');
+  src: url('fonts/넥센타이어체 Bold.ttf') format('truetype'),
+    url('fonts/넥센타이어체\ Bold.woff') format('woff');
 }
 
 
@@ -1167,7 +1175,7 @@
 @font-face {
   font-family: '동그라미재단B';
   src: url('fonts/동그라미재단B.ttf') format('truetype'),
-  url('fonts/동그라미재단B.woff') format('woff');
+    url('fonts/동그라미재단B.woff') format('woff');
 }
 
 
@@ -1336,9 +1344,9 @@
   font-style: normal;
   font-weight: 400;
   src: url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/govs/busan/Busan/Busan.woff2') format('woff2'),
-  url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/govs/busan/Busan/Busan.woff') format('woff');
-  }
-  
+    url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/govs/busan/Busan/Busan.woff') format('woff');
+}
+
 
 @font-face {
   font-family: '비트로 코어체';
@@ -1607,19 +1615,22 @@
 
 @font-face {
   font-family: '스포카 한 산스 Light';
-  src: url('fonts/스포카 한 산스 Light.ttf') format('truetype');
+  src: url('fonts/스포카 한 산스 Light.ttf') format('truetype'),
+    url('fonts/스포카\ 한\ 산스\ Light.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '스포카 한 산스 Regular';
-  src: url('fonts/스포카 한 산스 Regular.ttf') format('truetype');
+  src: url('fonts/스포카 한 산스 Regular.ttf') format('truetype'),
+    url('fonts/스포카\ 한\ 산스\ Regular.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '스포카 한 산스 Thin';
-  src: url('fonts/스포카 한 산스 Thin.ttf') format('truetype');
+  src: url('fonts/스포카 한 산스 Thin.ttf') format('truetype'),
+    url('fonts/스포카\ 한\ 산스\ Thin.woff') format('woff');
 }
 
 
@@ -1969,21 +1980,22 @@
 @font-face {
   font-family: '이순신돋움체B';
   src: url('fonts/이순신돋움체B.ttf') format('truetype'),
-  url('fonts/이순신돋움체B.woff') format('woff');
+    url('fonts/이순신돋움체B.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '이순신돋움체L';
   src: url('fonts/이순신돋움체L.ttf') format('truetype'),
-  url('fonts/이순신돋움체L.woff') format('woff');
+    url('fonts/이순신돋움체L.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '이순신돋움체M';
   src: url('fonts/이순신돋움체M.ttf') format('truetype'),
-  url('fonts/이순신돋움체M.woff') format('woff');;
+    url('fonts/이순신돋움체M.woff') format('woff');
+  ;
 }
 
 
@@ -2367,7 +2379,8 @@
 
 @font-face {
   font-family: '한겨레결체';
-  src: url('fonts/한겨레결체.ttf') format('truetype');
+  src: url('fonts/한겨레결체.ttf') format('truetype'),
+    url('fonts/한겨레결체.woff') format('woff');
 }
 
 
@@ -2392,7 +2405,7 @@
 @font-face {
   font-family: '한글틀고딕';
   src: url('fonts/한글틀고딕.ttf') format('truetype'),
-  url('fonts/한글틀고딕.woff') format('woff');
+    url('fonts/한글틀고딕.woff') format('woff');
 }
 
 
@@ -2513,21 +2526,21 @@
 @font-face {
   font-family: '해수체B';
   src: url('fonts/해수체B.ttf') format('truetype'),
-  url('fonts/해수체B.woff') format('woff');
+    url('fonts/해수체B.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '해수체L';
   src: url('fonts/해수체L.ttf') format('truetype'),
-  url('fonts/해수체L.woff') format('woff');
+    url('fonts/해수체L.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '해수체M';
   src: url('fonts/해수체M.ttf') format('truetype'),
-  url('fonts/해수체M.woff') format('woff');
+    url('fonts/해수체M.woff') format('woff');
 }
 
 
@@ -2562,14 +2575,14 @@
 @font-face {
   font-family: '헬스셋고딕Bold';
   src: url('fonts/헬스셋고딕Bold.woff') format('woff'),
-  url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetGothicBold.woff') format('woff');
+    url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetGothicBold.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '헬스셋고딕Light';
   src: url('fonts/헬스셋고딕Light.ttf') format('truetype'),
-  url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetGothicLight.woff') format('woff');
+    url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetGothicLight.woff') format('woff');
 }
 
 
