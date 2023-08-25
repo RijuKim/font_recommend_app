@@ -271,7 +271,7 @@
 
 
 @font-face {
-  font-family: 'HS봄바람체 2.0';
+  font-family: 'HS봄바람체';
   src: url('fonts/HS봄바람체 2.0.ttf') format('truetype');
 }
 
@@ -1113,13 +1113,13 @@
 
 
 @font-face {
-  font-family: '닉스곤체 B 2.0';
+  font-family: '닉스곤체 B';
   src: url('fonts/닉스곤체 B 2.0.ttf') format('truetype');
 }
 
 
 @font-face {
-  font-family: '닉스곤체 M 2.0';
+  font-family: '닉스곤체 M';
   src: url('fonts/닉스곤체 M 2.0.ttf') format('truetype');
 }
 
@@ -1948,13 +1948,14 @@
 
 
 @font-face {
-  font-family: '윤고딕 230';
-  src: url('fonts/윤고딕 230.ttf') format('truetype');
+  font-family: '윤고딕';
+  src: url('fonts/윤고딕 230.ttf') format('truetype'),
+    url('fonts/윤고딕\ 230.woff') format('woff');
 }
 
 
 @font-face {
-  font-family: '윤고딕 240';
+  font-family: '윤고딕';
   src: url('fonts/윤고딕 240.ttf') format('truetype');
 }
 
@@ -2297,7 +2298,6 @@
   font-family: '태-조각TB';
   src: url('fonts/태-조각TB.ttf') format('truetype');
 }
-
 
 @font-face {
   font-family: '텐바이텐 폰트 Bold';
