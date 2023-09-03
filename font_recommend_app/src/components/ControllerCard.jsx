@@ -6,14 +6,17 @@ import { AiOutlineMinusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 export default function ControllerCard(props) {
     const { isSelectChecked, index, selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
 
-    // 굵기 조절 상태 관리
-    const [thickness, setThickness] = useState(1);
-
-    // 골격 조절 상태 관리
-    const [skel, setSkel] = useState(50);
-
-    // 가중치 조절 상태 관리
+    // 폰트별 가중치 조절 상태 관리
     const [weight, setWeight] = useState(5);
+
+    // // 형태소 조절 상태 관리
+    // const [morp, setMorp] = useState(5);
+
+    // // 골격 조절 상태 관리
+    // const [skel, setSkel] = useState(5);
+
+    // // 굵기 조절 상태 관리
+    // const [thickness, setThick] = useState(5);
 
     // 체크 버튼 클릭 상태 관리
     const [isChecked, setIsChecked] = useState(false);
@@ -22,15 +25,29 @@ export default function ControllerCard(props) {
         setIsChecked(isSelectChecked);
     }, [isSelectChecked]);
 
-    // 굵기 조절 핸들러
-    const handleThicknessChange = (event) => {
-        setThickness(event.target.value);
-    };
+    // // 형태소 조절 핸들러
+    // const handleMorpChange = (event) => {
+    //     const newMorp = event.target.value;
+    //     setMorp(newMorp); // 로컬 상태로 가중치 업데이트
+    //     getMorpFromControllerCard(index, newMorp); // 부모 컴포넌트로 가중치 업데이트 전달
+    //     console.log(newMorp); // 로컬 상태로 업데이트된 가중치 출력
+    // };
+    
+    // // 골격 조절 핸들러
+    //  const handleSkelChange = (event) => {
+    //     const newSkel = event.target.value;
+    //     setSkel(newSkel); // 로컬 상태로 가중치 업데이트
+    //     getSkelFromControllerCard(index, newSkel); // 부모 컴포넌트로 가중치 업데이트 전달
+    //     console.log(newSkel); // 로컬 상태로 업데이트된 가중치 출력
+    // };
 
-     // 골격 조절 핸들러
-     const handleSkelChange = (event) => {
-        setSkel(event.target.value);
-    };
+    // // 굵기 조절 핸들러
+    // const handleThicknessChange = (event) => {
+    //     const newThick = event.target.value;
+    //     setThick(newThick); // 로컬 상태로 가중치 업데이트
+    //     getThickFromControllerCard(index, newThick); // 부모 컴포넌트로 가중치 업데이트 전달
+    //     console.log(newThick); // 로컬 상태로 업데이트된 가중치 출력
+    // };
     
     // 가중치 조절 핸들러(기존코드)
     /*const handleWeightChange = (event) => {
@@ -39,17 +56,16 @@ export default function ControllerCard(props) {
         console.log(weight);
     };  */  
 
-    
-
     // 가중치 조절 핸들러(기존코드랑 동일)
     const handleWeightChange = (event) => {
-
         const newWeight = event.target.value;
         setWeight(newWeight); // 로컬 상태로 가중치 업데이트
         getWeightFromControllerCard(index, newWeight); // 부모 컴포넌트로 가중치 업데이트 전달
         console.log(newWeight); // 로컬 상태로 업데이트된 가중치 출력
+    };
 
-    };    
+
+
     // 체크 버튼 클릭 핸들러
     const handleCheckButtonClick = () => {
         setIsChecked(!isChecked);
@@ -86,7 +102,7 @@ export default function ControllerCard(props) {
                     <div>{selectedFont}</div>
                     <div style={{fontFamily: `${modifiedSelectedFont}`}}>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
                 </div>
-                {/* 굵기, 골격, 가중치 조절기 */}
+                {/* 형태소, 골격, 굵기, 가중치 조절기 */}
                 <div className='controller-bars'>
                     <div className='controller-weight'>
                         <span>가중치</span>
@@ -101,18 +117,18 @@ export default function ControllerCard(props) {
                         />
                         <span>{weight}</span>
                     </div>
-                    <div className='controller-bar'>
-                        <span>굵기</span>
+                    {/* <div className='controller-skel'>
+                        <span>형태소</span>
                         <input
-                            className='controller-thickness-input'
+                            className='controller-weight-input'
                             type='range'
-                            min='0'
-                            max='3'
+                            min='1'
+                            max='10'
                             step='1'
-                            value={thickness}
-                            onChange={handleThicknessChange}
+                            value={morp}
+                            onChange={handleMorpChange}
                         />
-                        <span>{thickness}px</span>
+                        <span>{morp}</span>
                     </div>
                     <div className='controller-skel'>
                         <span>골격</span>
@@ -120,13 +136,26 @@ export default function ControllerCard(props) {
                             className='controller-skel-input'
                             type='range'
                             min='0'
-                            max='100'
+                            max='10'
                             step='1'
                             value={skel}
                             onChange={handleSkelChange}
                         />
-                        <span>{skel}%</span>
+                        <span>{skel}</span>
                     </div>
+                    <div className='controller-bar'>
+                        <span>굵기</span>
+                        <input
+                            className='controller-thickness-input'
+                            type='range'
+                            min='0'
+                            max='10'
+                            step='1'
+                            value={thickness}
+                            onChange={handleThicknessChange}
+                        />
+                        <span>{thickness}</span>
+                    </div> */}
                 </div>
             </div>
             {/* 선택한 폰트 취소 */}

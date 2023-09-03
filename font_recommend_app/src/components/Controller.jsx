@@ -6,7 +6,7 @@ import ControllerCard from './ControllerCard';
 import { AiOutlineCheck } from 'react-icons/ai'
 
 export default function Controller(props) {
-    const {onResultButtonClick, selectedFonts, getWeightFromController, onRemoveFont, userInput} = props;
+    const {onResultButtonClick, selectedFonts, getWeightFromController, getTotalWeightsFromController, onRemoveFont, userInput} = props;
 
     //전체 선택 상태 관리
     const [selectAllChecked, setSelectAllChecked] = useState(true);
@@ -17,6 +17,45 @@ export default function Controller(props) {
     // //ControllerCard로부터 사용자 입력 가중치 상태 관리
     const [weights, setWeights] = useState([]);
     // const [weights, setWeights] = useState(InitialWeights);
+
+    //형태소, 골격, 굵기 통합 상태 관리
+    const [total_weights, setTotalWeights] = useState([5, 5, 5]);
+
+    // 형태소 조절 상태 관리
+    const [morp, setMorp] = useState(5);
+
+    // 골격 조절 상태 관리
+    const [skel, setSkel] = useState(5);
+
+    // 굵기 조절 상태 관리
+    const [thickness, setThick] = useState(5);
+
+    // 형태소 조절 핸들러
+    const handleMorpChange = (event) => {
+        const newMorp = parseInt(event.target.value);
+        setMorp(newMorp);
+        setTotalWeights([newMorp, total_weights[1], total_weights[2]]); // 로컬 상태로 가중치 업데이트
+        // getMorpFromController(index, newMorp); // 부모 컴포넌트로 가중치 업데이트 전달
+        console.log(newMorp); // 로컬 상태로 업데이트된 가중치 출력
+    };
+    
+    // 골격 조절 핸들러
+        const handleSkelChange = (event) => {
+        const newSkel = parseInt(event.target.value);
+        setSkel(newSkel);
+        setTotalWeights([total_weights[0], newSkel, total_weights[2]]); // 로컬 상태로 가중치 업데이트
+        // getSkelFromController(index, newSkel); // 부모 컴포넌트로 가중치 업데이트 전달
+        console.log(newSkel); // 로컬 상태로 업데이트된 가중치 출력
+    };
+
+    // 굵기 조절 핸들러
+    const handleThicknessChange = (event) => {
+        const newThick = parseInt(event.target.value);
+        setThick(newThick);
+        setTotalWeights([total_weights[0], total_weights[1], newThick]); // 로컬 상태로 가중치 업데이트
+        // getThickFromController(index, newThick); // 부모 컴포넌트로 가중치 업데이트 전달
+        console.log(newThick); // 로컬 상태로 업데이트된 가중치 출력
+    };
 
     //전체 선택 이벤트 핸들러
     const handleSelectAllClick = () => {
@@ -45,8 +84,9 @@ export default function Controller(props) {
     useEffect(() => {
         // 부모 컴포넌트로 가중치 배열 전달
         getWeightFromController(weights);
+        getTotalWeightsFromController(total_weights);
 
-    }, [weights]);
+    }, [weights, total_weights, getWeightFromController, getTotalWeightsFromController]);
 
     
 
@@ -93,10 +133,53 @@ export default function Controller(props) {
                 <div className='control_page_inform'>
                     <div className='control_page_title'>2. 선택된 폰트 조절</div>
                     <div className='control_page_title2'>
-                        각 폰트마다 굵기, 골격, 가중치를 조절하세요.
+                        각 폰트별 가중치와 형태소, 굵기, 골격 가중치를 조절하세요.
                     </div>
                 </div>
             </div>
+            {/* 선택한 폰트가 있을 때만 형태소, 굵기, 골격 가중치 조절기 표시 */}
+            { selectedFonts.length > 0 && (
+            <div>
+                <div className='controller-skel'>
+                            <span>형태소</span>
+                            <input
+                                className='controller-weight-input'
+                                type='range'
+                                min='1'
+                                max='10'
+                                step='1'
+                                value={morp}
+                                onChange={handleMorpChange}
+                            />
+                            <span>{morp}</span>
+                        </div>
+                        <div className='controller-skel'>
+                            <span>골격</span>
+                            <input
+                                className='controller-skel-input'
+                                type='range'
+                                min='0'
+                                max='10'
+                                step='1'
+                                value={skel}
+                                onChange={handleSkelChange}
+                            />
+                            <span>{skel}</span>
+                        </div>
+                        <div className='controller-bar'>
+                            <span>굵기</span>
+                            <input
+                                className='controller-thickness-input'
+                                type='range'
+                                min='0'
+                                max='10'
+                                step='1'
+                                value={thickness}
+                                onChange={handleThicknessChange}
+                            />
+                            <span>{thickness}</span>
+                        </div>
+            </div>)}
             {/* 선택한 폰트 조절 컨테이너 */}
             <button className='select-all-button' onClick={handleSelectAllClick}>
                 <AiOutlineCheck/>전체 선택

@@ -23,6 +23,9 @@ export default function Tab() {
     //Controller에서 받아온 사용자 입력 weight 데이터 저장 상태관리
     const [weights, setWeights] = useState(1);
 
+    //Controller에서 받아온 사용자 입력 형태소, 골격, 굵기 데이터 저장 상태관리
+    const [totalWeights, setTotalWeights] = useState(1);
+
     //로딩 상태 관리
     const [isLoading, setIsLoading] = useState(false);
 
@@ -31,9 +34,7 @@ export default function Tab() {
 
     // 탭을 클릭했을 때 실행되는 함수
     const handleTabClick = (index) => {
-       
          setActiveTab(index);
-        
     };
 
     // 사용자 선택 폰트 데이터 가져오기 핸들러
@@ -47,10 +48,16 @@ export default function Tab() {
         setUserInput(userInput);
     }
 
-    //Controller에서 받아온 사용자 입력 weight 데이터 가져오기 핸들러
+    //Controller에서 받아온 사용자 입력 폰트별 가중치 데이터 가져오기 핸들러
     const getWeightFromController = (weights) => {
         setWeights(weights);
         console.log("tab의 가중치", weights)
+    }
+
+    //Controller에서 받아온 사용자 입력 형태소 가중치 데이터 가져오기 핸들러
+    const getTotalWeightsFromController = (total_weights) => {
+        setTotalWeights(total_weights);
+        console.log("tab의 total 가중치", total_weights)
     }
 
     //seletedFonts 배열에서 선택한 폰트 삭제 핸들러
@@ -97,7 +104,8 @@ export default function Tab() {
         // Flask API에 GET 요청을 보냅니다.
         axios.post('http://localhost:8000/font_recommend_test', {
             font_names: selectedFonts,
-            weights: weights
+            weights: weights,
+            total_Weights:totalWeights,
         })
         .then(response => {
             setApiResponse(response.data);
@@ -118,6 +126,7 @@ export default function Tab() {
         ['조절', <Controller 
             selectedFonts={selectedFonts} 
             getWeightFromController={getWeightFromController}
+            getTotalWeightsFromController={getTotalWeightsFromController}
             onRemoveFont={handleRemoveFont} 
             onResultButtonClick={handleMixFontsClick}
             userInput={userInput}/>],
