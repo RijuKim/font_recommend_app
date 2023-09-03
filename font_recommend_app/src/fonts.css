@@ -232,24 +232,21 @@
 
 @font-face {
   font-family: 'EBS주시경B';
-  src: url('fonts/EBS주시경B.ttf') format('truetype');
+  src: url('fonts/EBSJuSiGyeongBold.woff') format('woff');
 }
 
 
-/* @font-face {
-  font-family: 'EBS주시경L';
-  src: url('fonts/EBS주시경L.ttf') format('truetype');
-} */
 @font-face {
   font-family: 'EBS주시경L';
-  src: url('fonts/EBS주시경L.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  src: url('fonts/EBSJuSiGyeongLight.woff') format('woff');
 }
+
 
 /* @font-face {
   font-family: 'EBS주시경M';
   src: url('fonts/EBS주시경M.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 } */
 @font-face {
   font-family: 'EBS주시경M';
