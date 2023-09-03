@@ -55,11 +55,10 @@
 
 @font-face {
   font-family: '_12롯데마트행복Light';
+  src: url('fonts/12롯데마트행복Light.woff') format('woff');
   font-style: normal;
   font-weight: 300;
-  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2') format('woff2'),
-    url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff') format('woff');
-}
+  }
 
 @font-face {
   font-family: '_12롯데마트행복Medium';
@@ -352,8 +351,7 @@
 
 @font-face {
   font-family: 'HY얕은샘물M';
-  src: url('fonts/HY얕은샘물M.ttf') format('truetype'),
-    url('fonts/HY얕은샘물M.woff') format('woff');
+  src: url('fonts/HY얕은샘물M.woff') format('woff');
 }
 
 
@@ -2287,13 +2285,13 @@
 
 @font-face {
   font-family: '태-으뜸B';
-  src: url('fonts/태-으뜸B.ttf') format('truetype');
+  src: url('fonts/태-으뜸B.woff') format('woff');
 }
 
 
 @font-face {
   font-family: '태-조각TB';
-  src: url('fonts/태-조각TB.ttf') format('truetype');
+  src: url('fonts/태-조각TB.woff') format('woff');
 }
 
 @font-face {
