@@ -2285,13 +2285,13 @@
 
 @font-face {
   font-family: '태-으뜸B';
-  src: url('fonts/태-으뜸B.woff') format('woff');
+  src: url('fonts/TaeFont-TSTOtmB.otf') format('opentype');
 }
 
 
 @font-face {
   font-family: '태-조각TB';
-  src: url('fonts/태-조각TB.woff') format('woff');
+  src: url('fonts/TaeFont-TSTJktB.otf') format('opentype');
 }
 
 @font-face {
