@@ -34,7 +34,18 @@ export default function Tab() {
 
     // 탭을 클릭했을 때 실행되는 함수
     const handleTabClick = (index) => {
-         setActiveTab(index);
+        if (index === 2) {
+            if ((activeTab === 1 && selectedFonts.length === 0) || (activeTab === 0 && selectedFonts.length === 0)) {
+                alert('먼저 폰트를 선택해주세요.');
+            }  
+            else {
+                alert('조절 탭에서 폰트 혼합하기 버튼을 눌러주세요.');
+            }
+        } else if (index !== 0 && selectedFonts.length === 0) {
+            alert('먼저 폰트를 선택해주세요.');
+        } else {
+            setActiveTab(index);
+        }
     };
 
     // 사용자 선택 폰트 데이터 가져오기 핸들러
@@ -69,8 +80,12 @@ export default function Tab() {
 
     //폰트 혼합하기 버튼 클릭 핸들러, 클릭 시 폰트 추천 시스템 api 호출
     const handleMixFontsClick = () => {
+    if (selectedFonts.length === 0) {
+        alert('먼저 폰트를 선택해주세요.'); // 폰트가 선택되지 않은 경우 알림 창 띄우기
+    } else {
         setIsLoading(true); // 로딩 상태 시작
         fetchDataFromAPI();
+    }
     }
     //폰트 혼합하기 버튼 클릭 핸들러, 클릭 시 폰트 추천 시스템 api 호출
      const handleGoBackClick = () => {

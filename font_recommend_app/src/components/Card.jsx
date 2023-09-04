@@ -90,7 +90,7 @@ function Cards(props) {
             <div className='cards'>
                 <div className='card_inform_wrapper'>
                     <div className='card_page_inform'>
-                        <div className='card_page_title'>1. 폰트 선택하기</div>
+                        <div className='card_page_title'>1. 폰트 선택하기 - 최대 3개</div>
                         <div className='card_page_title2'>
                             먼저 원하는 폰트와 유사한 폰트를 두 가지 이상 선택하세요.
                         </div>
