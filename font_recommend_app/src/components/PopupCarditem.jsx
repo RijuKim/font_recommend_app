@@ -11,14 +11,18 @@ function PopupCardItem(props) {
 
     const handleCardClick = () => {
         const confirmMessage = `${children} 폰트를 선택하시겠습니까?`;
-        const confirmedMessage = `${children} 폰트가 선택되었습니다. '조절'탭에서 확인하세요.`;
+        const confirmedMessage = `${children} 폰트가 선택되었습니다. '조절' 탭에서 확인하세요.`;
+        const duplicateMessage = '이미 같은 폰트를 선택하셨습니다.'; // 추가: 중복 선택 알림 메시지
 
-        if (window.confirm(confirmMessage)){
-            if (selectedFonts.length>=3){
+        if (selectedFonts.some((selectedFont) => selectedFont === props.children)) { // 중복 선택 확인
+            alert(duplicateMessage);
+        } else if (window.confirm(confirmMessage)) {
+            if (selectedFonts.length >= 3) {
                 alert('최대 3개까지 선택이 가능합니다');
-            }else{
+            } else {
                 setIsSelected(true);
-                getFontDataFromItem(props.children);
+                getFontDataFromItem(props.children)
+                console.log('ddDdsklsljdlfskjdfsldfkj', props.children, selectedFonts);
                 window.alert(confirmedMessage);
             }
         }
