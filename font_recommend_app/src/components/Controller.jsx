@@ -137,56 +137,74 @@ export default function Controller(props) {
                     </div>
                 </div>
             </div>
-            {/* 선택한 폰트가 있을 때만 형태소, 굵기, 골격 가중치 조절기 표시 */}
-            { selectedFonts.length > 0 && (
-            <div>
-                <div className='controller-skel'>
-                            <span>형태소</span>
-                            <input
-                                className='controller-weight-input'
-                                type='range'
-                                min='1'
-                                max='10'
-                                step='1'
-                                value={morp}
-                                onChange={handleMorpChange}
-                            />
-                            <span>{morp}</span>
-                        </div>
-                        <div className='controller-skel'>
-                            <span>골격</span>
-                            <input
-                                className='controller-skel-input'
-                                type='range'
-                                min='0'
-                                max='10'
-                                step='1'
-                                value={skel}
-                                onChange={handleSkelChange}
-                            />
-                            <span>{skel}</span>
-                        </div>
-                        <div className='controller-bar'>
-                            <span>굵기</span>
-                            <input
-                                className='controller-thickness-input'
-                                type='range'
-                                min='0'
-                                max='10'
-                                step='1'
-                                value={thickness}
-                                onChange={handleThicknessChange}
-                            />
-                            <span>{thickness}</span>
-                        </div>
-            </div>)}
             {/* 선택한 폰트 조절 컨테이너 */}
-            <button className='select-all-button' onClick={handleSelectAllClick}>
-                <AiOutlineCheck/>전체 선택
-            </button>
             <div className='control-container'>
                 <div className='control-wrapper'>
+                    <button className='select-all-button' onClick={handleSelectAllClick}>
+                    <AiOutlineCheck/>전체 선택
+                    </button>
                     <ul className='control-items'>
+                                    {/* 선택한 폰트가 있을 때만 형태소, 굵기, 골격 가중치 조절기 표시 */}
+            { selectedFonts.length > 0 && (
+            <div className='total-controller-container'>
+                <div className='total-controller-wrapper'>
+                        {/* <div className='total-controller-inform'>글자의 구조 정보에 따라 추천 받고 싶은 폰트를 세밀하게 조절할 수 있습니다.</div> */}
+                        <div className='total-controller-bars'>
+                                <div className='total-controllers'>
+                                    <div className='total-controller'>
+                                        <div className='total-controller-content'>
+                                            <div className='total-controller-title'>형태소</div>
+                                            <input
+                                                className='controller-weight-input'
+                                                type='range'
+                                                min='1'
+                                                max='10'
+                                                step='1'
+                                                value={morp}
+                                                onChange={handleMorpChange}
+                                            />
+                                            <div>{morp}</div>
+                                        </div>
+                                        <div className='total-controller-title-inform'>글자의 끝단 부분 모양 반영도입니다.</div>
+                                    </div>
+                                    <hr className='hr_line'/>
+                                    <div className='total-controller'>
+                                        <div className='total-controller-content'>                 
+                                            <div className='total-controller-title'>골격</div>
+                                            <input
+                                                className='controller-skel-input'
+                                                type='range'
+                                                min='0'
+                                                max='10'
+                                                step='1'
+                                                value={skel}
+                                                onChange={handleSkelChange}
+                                            />
+                                            <div>{skel}</div>
+                                        </div>
+                                        <div className='total-controller-title-inform'>글자의 전체적인 모양 반영도입니다.</div>
+                                    </div>
+                                    <hr className='hr_line'/>
+                                    <div className='total-controller'>
+                                        <div className='total-controller-content'>  
+                                            <div className='total-controller-title'>굵기</div>    
+                                            <input
+                                                className='controller-thickness-input'
+                                                type='range'
+                                                min='0'
+                                                max='10'
+                                                step='1'
+                                                value={thickness}
+                                                onChange={handleThicknessChange}
+                                            />
+                                            <div>{thickness}</div>
+                                        </div>
+                                        <div className='total-controller-title-inform'>선택한 폰트의 굵기와 유사한 정도입니다.</div>
+                                    </div>
+                                    </div>
+                            </div>
+                    </div>
+                </div>)}
                         {/* 폰트가 선택되는 만큼 해당 폰트의 ControllerCard 생성 */}
                         {selectedFonts.length === 0 ? (
                             <div className='initial-message'>먼저 폰트를 선택해주세요!</div>

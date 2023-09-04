@@ -17,7 +17,7 @@ const initialCardData = [
 ];
 
 function Cards(props) {
-    const { getFontDataFromCard, getUserInputDataFromCard } = props;
+    const { getFontDataFromCard, getUserInputDataFromCard, selectedFonts } = props;
 
     // 검색어 상태 관리
     const [searchTerm, setSearchTerm] = useState('');
@@ -195,6 +195,7 @@ function Cards(props) {
                         children8={popupContent.children8}
                         onClose={handleClosePopup}
                         getFontDataFromPopCard={getFontDataFromPopCard}
+                        selectedFonts={selectedFonts}
                     />
                 )}
             </div>

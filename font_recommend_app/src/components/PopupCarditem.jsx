@@ -1,8 +1,9 @@
+//PopupCarditem.jsx
 // 팝업 카드 클릭하면 콘솔에 타이틀 찍히도록 수정
 import React, { useState } from 'react';
 
 function PopupCardItem(props) {
-    const { category, children, userInput, getFontDataFromItem } = props;
+    const { category, children, userInput, getFontDataFromItem, selectedFonts } = props;
 
     //폰트 선택여부 상태 관리
     const [isSelected, setIsSelected] = useState(false);
@@ -13,9 +14,13 @@ function PopupCardItem(props) {
         const confirmedMessage = `${children} 폰트가 선택되었습니다. '조절'탭에서 확인하세요.`;
 
         if (window.confirm(confirmMessage)){
-            setIsSelected(true);
-            getFontDataFromItem(props.children);
-            window.alert(confirmedMessage);
+            if (selectedFonts.length>=3){
+                alert('최대 3개까지 선택이 가능합니다');
+            }else{
+                setIsSelected(true);
+                getFontDataFromItem(props.children);
+                window.alert(confirmedMessage);
+            }
         }
     };
 

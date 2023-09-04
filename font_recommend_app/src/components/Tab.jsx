@@ -122,7 +122,10 @@ export default function Tab() {
 
     // 탭 메뉴에 대한 정보: [이름, 컴포넌트]
     const tabs = [
-        ['선택', <Card getFontDataFromCard={getFontDataFromCard} getUserInputDataFromCard={getUserInputDataFromCard}/>],
+        ['선택', <Card 
+        getFontDataFromCard={getFontDataFromCard} 
+        getUserInputDataFromCard={getUserInputDataFromCard}
+        selectedFonts={selectedFonts}/>],
         ['조절', <Controller 
             selectedFonts={selectedFonts} 
             getWeightFromController={getWeightFromController}
