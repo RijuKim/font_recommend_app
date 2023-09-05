@@ -120,7 +120,7 @@ export default function Tab() {
         axios.post('http://localhost:8000/font_recommend_test', {
             font_names: selectedFonts,
             weights: weights,
-            total_Weights:totalWeights,
+            total_weights:totalWeights,
         })
         .then(response => {
             setApiResponse(response.data);
