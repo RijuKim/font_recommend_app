@@ -34,14 +34,15 @@ export default function Tab() {
 
     // 탭을 클릭했을 때 실행되는 함수
     const handleTabClick = (index) => {
-        if (index === 2) {
-            if ((activeTab === 1 && selectedFonts.length === 0) || (activeTab === 0 && selectedFonts.length === 0)) {
-                alert('먼저 폰트를 선택해주세요.');
-            }  
-            else {
-                alert('조절 탭에서 폰트 혼합하기 버튼을 눌러주세요.');
-            }
-        } else if (index !== 0 && selectedFonts.length === 0) {
+        // if (index === 2) {
+        //     if ((activeTab === 1 && selectedFonts.length === 0) || (activeTab === 0 && selectedFonts.length === 0)) {
+        //         alert('먼저 폰트를 선택해주세요.');
+        //     }  
+        //     else {
+        //         setActiveTab(index);
+        //     }
+        //}
+        if (index !== 0 && selectedFonts.length === 0) {
             alert('먼저 폰트를 선택해주세요.');
         } else {
             setActiveTab(index);
@@ -120,13 +121,10 @@ export default function Tab() {
         axios.post('http://localhost:8000/font_recommend_test', {
             font_names: selectedFonts,
             weights: weights,
-            total_Weights:totalWeights,
+            total_weights:totalWeights,
         })
         .then(response => {
             setApiResponse(response.data);
-
-            // API 응답을 받은 후 '결과' 탭으로 변경
-            setActiveTab(2);
             setIsLoading(false); // 로딩 상태 종료
         })
         .catch(error => {
@@ -137,19 +135,19 @@ export default function Tab() {
 
     // 탭 메뉴에 대한 정보: [이름, 컴포넌트]
     const tabs = [
-        ['선택', <Card 
+        ['폰트 선택', <Card 
         getFontDataFromCard={getFontDataFromCard} 
         getUserInputDataFromCard={getUserInputDataFromCard}
         selectedFonts={selectedFonts}/>],
-        ['조절', <Controller 
+        ['조정/결과', <Controller 
             selectedFonts={selectedFonts} 
             getWeightFromController={getWeightFromController}
             getTotalWeightsFromController={getTotalWeightsFromController}
             onRemoveFont={handleRemoveFont} 
             onResultButtonClick={handleMixFontsClick}
-            userInput={userInput}/>],
-        ['결과', <Result apiResponse={apiResponse}
-        goBackButtonClick={handleGoBackClick}/>],
+            userInput={userInput}
+            apiResponse={apiResponse}
+            />],
     ];
 
 

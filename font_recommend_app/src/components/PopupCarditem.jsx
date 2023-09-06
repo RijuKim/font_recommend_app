@@ -22,10 +22,9 @@ function PopupCardItem(props) {
             } else {
                 setIsSelected(true);
                 getFontDataFromItem(props.children)
-                console.log('ddDdsklsljdlfskjdfsldfkj', props.children, selectedFonts);
                 window.alert(confirmedMessage);
             }
-        }
+        }     
     };
 
     return (

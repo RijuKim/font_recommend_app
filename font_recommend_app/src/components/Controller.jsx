@@ -4,9 +4,10 @@ import './Cards.css';
 import './Controllers.css';
 import ControllerCard from './ControllerCard';
 import { AiOutlineCheck } from 'react-icons/ai'
+import Result from './Result';
 
 export default function Controller(props) {
-    const {onResultButtonClick, selectedFonts, getWeightFromController, getTotalWeightsFromController, onRemoveFont, userInput} = props;
+    const {onResultButtonClick, selectedFonts, getWeightFromController, getTotalWeightsFromController, onRemoveFont, userInput, apiResponse, handleGoBackClick} = props;
 
     //전체 선택 상태 관리
     const [selectAllChecked, setSelectAllChecked] = useState(true);
@@ -96,24 +97,8 @@ export default function Controller(props) {
         //ControllerCard로부터 사용자 입력 가중치 상태 관리
         weights[index] = parseInt(weight);
         setWeights([...weights]);
-
-        // 부모 컴포넌트로 가중치 배열 전달
-        // getWeightFromController(updatedWeights);
     }
 
-    /* 기존 코드(가중치 디폴트 값 안 넘어옴)
-        const getWeightFromControllerCard = (index, weight) => {
-            setWeights(prevWeights => {
-                const newWeights = [...prevWeights];
-                newWeights[index] = parseInt(weight);
-                return newWeights;
-            });
-    
-            // 부모 컴포넌트로 가중치 배열 전달
-            getWeightFromController(weights);
-        }
-    
-*/
     //체크 버튼 클릭 핸들러
     const getFontCheck = (font, isSelected) => {
         if (isSelected) {
@@ -128,17 +113,17 @@ export default function Controller(props) {
 
     return (
         <div className='controls'>
-            {/* 폰트 조절 설명 */}
-            <div className='control_inform_wrapper'>
-                <div className='control_page_inform'>
-                    <div className='control_page_title'>2. 선택된 폰트 조절</div>
-                    <div className='control_page_title2'>
-                        각 폰트별 가중치와 형태소, 굵기, 골격 가중치를 조절하세요.
+            <div className='control-container'>
+                {/* 폰트 조절 설명 */}
+                <div className='control_inform_wrapper'>
+                    <div className='control_page_inform'>
+                        <div className='control_page_title'>2. 선택된 폰트 조절</div>
+                        <div className='control_page_title2'>
+                            각 폰트별 가중치와 형태소, 굵기, 골격 가중치를 조절하세요.
+                        </div>
                     </div>
                 </div>
-            </div>
-            {/* 선택한 폰트 조절 컨테이너 */}
-            <div className='control-container'>
+                {/* 선택한 폰트 조절 컨테이너 */}
                 <div className='control-wrapper'>
                     <button className='select-all-button' onClick={handleSelectAllClick}>
                     <AiOutlineCheck/>전체 선택
@@ -230,6 +215,21 @@ export default function Controller(props) {
             <div className='mix-button-wrapper'>
                 <button className='mix-button' onClick={handleMixFontsClick}>폰트 혼합하기</button>
             </div>
+            {/* 결과 */}
+            {/* 검색 결과 설명 */}
+            {apiResponse && (
+                <>
+                <div className='result_inform_wrapper'>
+                    <div className='result_page_inform'>
+                        <div className='result_page_title'>3. 폰트 검색 결과</div>
+                        <div className='result_page_title2'>
+                            원하는 폰트 결과를 확인하세요!
+                        </div>
+                    </div>
+                </div>
+                <Result apiResponse={apiResponse} goBackButtonClick={handleGoBackClick} />
+                </>
+            )}
         </div>
     );
 }

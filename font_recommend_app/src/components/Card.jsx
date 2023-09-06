@@ -6,8 +6,8 @@ import PopupCard from './PopupCard';
 
 // 카테고리 및 대표 폰트들
 const initialCardData = [
-    { category: '고딕', titlefont: '맑은 고딕', children: '맑은 고딕', children2: '나눔스퀘어', children3: '타이포 씨고딕180', children4: '휴먼고딕', children5: '유토이미지 고딕 R', children6: '헬스셋고딕Bold', children7: 'DX모던고딕 RoundBold', children8: 'DX단선고딕 Thin' },
-    { category: '명조', titlefont: 'KBIZ 한마음명조 M', children: 'KBIZ 한마음명조 M', children2: '나눔명조', children3: '제주명조', children4: 'HY견명조', children5: 'DX신문명조', children6: '빛의계승자체 Regular', children7: '조선일보명조', children8: '함초롬바탕체' },
+    { category: '민부리체', titlefont: '맑은 고딕', children: '맑은 고딕', children2: '나눔스퀘어', children3: '타이포 씨고딕180', children4: '휴먼고딕', children5: '유토이미지 고딕 R', children6: '헬스셋고딕Bold', children7: 'DX모던고딕 RoundBold', children8: 'DX단선고딕 Thin' },
+    { category: '부리체', titlefont: 'KBIZ 한마음명조 M', children: 'KBIZ 한마음명조 M', children2: '나눔명조', children3: '제주명조', children4: 'HY견명조', children5: 'DX신문명조', children6: '빛의계승자체 Regular', children7: '조선일보명조', children8: '함초롬바탕체' },
     { category: '손글씨', titlefont: '나눔손글씨 다행체', children: '나눔손글씨 다행체', children2: '나눔손글씨 반짝반짝 별', children3: '어비 나현체', children4: '어비 소윤체', children5: '온글잎 안될과학약체', children6: '나눔손글씨 중학생', children7: '나눔손글씨 펜', children8: '나눔손글씨 한윤체' },
     { category: '장식체', titlefont: 'HS겨울눈꽃체', children: 'HS겨울눈꽃체', children2: 'HS두꺼비체', children3: '가비아 봄바람체', children4: '창원단감아삭체 Bold', children5: '가나초콜릿체', children6: 'HanS 붐붐', children7: '116수박화체', children8: 'DX동화나라 Bold' },
     { category: '픽셀체', titlefont: '픽셀체', children: '116앵무부리', children2: ' 나눔굴림', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
@@ -88,29 +88,27 @@ function Cards(props) {
     return (
         <div className='body'>
             <div className='cards'>
-                <div className='card_inform_wrapper'>
-                    <div className='card_page_inform'>
-                        <div className='card_page_title'>1. 폰트 선택하기 - 최대 3개</div>
-                        <div className='card_page_title2'>
-                            먼저 원하는 폰트와 유사한 폰트를 두 가지 이상 선택하세요.
-                        </div>
-                    </div>
-                    <div>
-                        {/* 검색 입력란 */}
-                        <div className='card-search-box'>
-                            <input
-                                className='card-search-input'
-                                type='text'
-                                placeholder='모든 폰트 내에서 검색'
-                                value={searchTerm}
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                    </div>
-                </div>
-
-
                 <div className='cards__container'>
+                    <div className='card_inform_wrapper'>
+                        <div className='card_page_inform'>
+                            <div className='card_page_title'>1. 폰트 선택하기 - 최대 3개</div>
+                            <div className='card_page_title2'>
+                                먼저 원하는 폰트와 유사한 폰트를 두 가지 이상 선택하세요.
+                            </div>
+                        </div>
+                        <div className='card-search-box-wrapper'>
+                            {/* 검색 입력란 */}
+                            <div className='card-search-box'>
+                                <input
+                                    className='card-search-input'
+                                    type='text'
+                                    placeholder='모든 폰트 내에서 검색'
+                                    value={searchTerm}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
                     <div className='cards__wrapper'>
                         <div className='boxs'>
                             {/* 카드 제목 변경 입력란 */}
@@ -158,8 +156,7 @@ function Cards(props) {
                                 />
                             ))}
                         </ul>
-                        <ul className='cards__items'>
-                            {/* 두 번째 반 카드 렌더링 */}
+                        {/* <ul className='cards__items'>
                             {secondHalf.map((item, index) => (
                                 <CardItem
                                     key={index}
@@ -177,7 +174,7 @@ function Cards(props) {
                                     onClick={() => handleCardItemClick(item)}
                                 />
                             ))}
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
                 {console.log("Card에서 저장된 폰트", selectedFont, userInput)}

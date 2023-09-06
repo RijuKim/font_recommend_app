@@ -1,11 +1,11 @@
 /* Controller */
 .controls{
-    padding: 16px 4rem 4rem 4rem;
+    padding: 0px 4rem 4rem 4rem;
 }
 
 .control-container{
     display: flex;
-
+    flex-direction: column;
     margin-bottom: 32px;
     justify-content: center;
 }
@@ -25,7 +25,7 @@
 
 .control_page_title {
     text-align: left;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     width: 100%;
 }
@@ -33,7 +33,7 @@
 .control_page_title2 {
     display: flex;
     text-align: left;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     width: 100%;
 }
@@ -150,7 +150,7 @@
     flex-flow: column;
     background-color: #fff;
     width: 300px;
-    height: 400px;
+    height: 300px;
     border-width: 2px;
     border-radius: 20px;
     border-style: solid;

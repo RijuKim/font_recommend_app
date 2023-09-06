@@ -1,5 +1,5 @@
 .cards {
-    padding: 16px 4rem 4rem 4rem;
+    padding: 0px 4rem 1rem 4rem;
     background: #fff;
 }
 
@@ -16,8 +16,9 @@
 .card_inform_wrapper {
     display: flex;
     margin-top: 40px;
-    margin-left: 10%;
-    margin-bottom: 32px;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-right: 32px;
     align-items: center;
     justify-content: space-between;
 }
@@ -29,7 +30,7 @@
 
 .card_page_title {
     text-align: left;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     width: 100%;
 }
@@ -37,15 +38,18 @@
 .card_page_title2 {
     display: flex;
     text-align: left;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     width: 100%;
 }
 
+.card-search-box-wrapper {
+    margin-left: 16px;
+}
+
 .card-search-box {
     margin-bottom: 10px;
-    margin-right: 32px;
-    height: 56px;
+    margin-right: 10%;
 }
 
 
@@ -65,9 +69,8 @@
 
 input[type=text] {
     width: 408px;
-    height: 44px;
+    height: 40px;
     font-size: 16px;
-    margin-bottom: 20px;
     border-radius: 20px;
     padding-left: 2%;
     box-shadow: 0 6px 15px rgba(85, 88, 92, 0.17);
