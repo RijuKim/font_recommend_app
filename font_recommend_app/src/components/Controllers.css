@@ -48,6 +48,12 @@
     border: none;
     font-size: 16px;
     background-color: transparent;
+    justify-content: flex-start;
+}
+
+.control-wrapper{
+    display: flex;
+    flex-direction: column;
 }
 
 .control-items{
@@ -58,6 +64,8 @@
     gap: 1rem;
     padding-left: 8px;
     padding-right: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
 .total-controller-container{

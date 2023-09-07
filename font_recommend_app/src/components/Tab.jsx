@@ -145,6 +145,7 @@ export default function Tab() {
             getTotalWeightsFromController={getTotalWeightsFromController}
             onRemoveFont={handleRemoveFont} 
             onResultButtonClick={handleMixFontsClick}
+            handleGoBackClick={handleGoBackClick}
             userInput={userInput}
             apiResponse={apiResponse}
             />],
