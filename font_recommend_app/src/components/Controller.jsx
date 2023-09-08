@@ -7,7 +7,7 @@ import { AiOutlineCheck } from 'react-icons/ai'
 import Result from './Result';
 
 export default function Controller(props) {
-    const {onResultButtonClick, selectedFonts, getWeightFromController, getTotalWeightsFromController, onRemoveFont, userInput, apiResponse, handleGoBackClick} = props;
+    const {onResultButtonClick, selectedFonts,tab_Weights,tab_totalWeights, getWeightFromController, getTotalWeightsFromController, onRemoveFont, userInput, apiResponse, handleGoBackClick} = props;
 
     //전체 선택 상태 관리
     const [selectAllChecked, setSelectAllChecked] = useState(true);
@@ -16,20 +16,20 @@ export default function Controller(props) {
     const [checkFonts, setCheckFonts] = useState(selectedFonts);
 
     // //ControllerCard로부터 사용자 입력 가중치 상태 관리
-    const [weights, setWeights] = useState([]);
+    const [weights, setWeights] = useState(tab_Weights.length > 0 ? tab_Weights : []);
     // const [weights, setWeights] = useState(InitialWeights);
 
     //형태소, 골격, 굵기 통합 상태 관리
-    const [total_weights, setTotalWeights] = useState([5, 5, 5]);
+    const [total_weights, setTotalWeights] = useState(tab_totalWeights.length > 0 ? tab_totalWeights : [5, 5, 5]);
 
     // 형태소 조절 상태 관리
-    const [morp, setMorp] = useState(5);
+    const [morp, setMorp] = useState(total_weights[0]==5?5:total_weights[0]);
 
     // 골격 조절 상태 관리
-    const [skel, setSkel] = useState(5);
+    const [skel, setSkel] = useState(total_weights[1]==5?5:total_weights[1]);
 
     // 굵기 조절 상태 관리
-    const [thickness, setThick] = useState(5);
+    const [thickness, setThick] = useState(total_weights[2]==5?5:total_weights[2]);
 
     // 형태소 조절 핸들러
     const handleMorpChange = (event) => {
@@ -199,6 +199,7 @@ export default function Controller(props) {
                                     key={index}
                                     index={index}
                                     selectedFont={font}
+                                    controller_weights={weights}
                                     userInput={userInput}
                                     getFontCheck={getFontCheck}
                                     getWeightFromControllerCard={getWeightFromControllerCard}

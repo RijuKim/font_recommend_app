@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import Controller from './Controller';
+import ControllerCard from './ControllerCard';
+
 import Result from './Result';
 import axios from 'axios';
 import './Tab.css'
@@ -21,7 +23,7 @@ export default function Tab() {
     const [userInput, setUserInput] = useState('')
 
     //Controller에서 받아온 사용자 입력 weight 데이터 저장 상태관리
-    const [weights, setWeights] = useState(1);
+    const [Weights, setWeights] = useState(1);
 
     //Controller에서 받아온 사용자 입력 형태소, 골격, 굵기 데이터 저장 상태관리
     const [totalWeights, setTotalWeights] = useState(1);
@@ -63,13 +65,13 @@ export default function Tab() {
     //Controller에서 받아온 사용자 입력 폰트별 가중치 데이터 가져오기 핸들러
     const getWeightFromController = (weights) => {
         setWeights(weights);
-        console.log("tab의 가중치", weights)
+        console.log("tab의 가중치", Weights)
     }
 
     //Controller에서 받아온 사용자 입력 형태소 가중치 데이터 가져오기 핸들러
     const getTotalWeightsFromController = (total_weights) => {
         setTotalWeights(total_weights);
-        console.log("tab의 total 가중치", total_weights)
+        console.log("tab의 total 가중치", totalWeights)
     }
 
     //seletedFonts 배열에서 선택한 폰트 삭제 핸들러
@@ -92,6 +94,8 @@ export default function Tab() {
      const handleGoBackClick = () => {
         setSelectedFonts([]);
         setWeights(1);
+        setTotalWeights(1);
+        setApiResponse('');
         setActiveTab(0); // "선택" 탭으로 변경
     }
     
@@ -120,7 +124,7 @@ export default function Tab() {
         // Flask API에 GET 요청을 보냅니다.
         axios.post('http://localhost:8000/font_recommend_test', {
             font_names: selectedFonts,
-            weights: weights,
+            weights: Weights,
             total_weights:totalWeights,
         })
         .then(response => {
@@ -141,6 +145,8 @@ export default function Tab() {
         selectedFonts={selectedFonts}/>],
         ['조정/결과', <Controller 
             selectedFonts={selectedFonts} 
+            tab_Weights={Weights}
+            tab_totalWeights={totalWeights}
             getWeightFromController={getWeightFromController}
             getTotalWeightsFromController={getTotalWeightsFromController}
             onRemoveFont={handleRemoveFont} 
@@ -177,6 +183,7 @@ export default function Tab() {
                 ) : (
                 tabs[activeTab][1]
                 )}
+
             </div>
         </div>
     );

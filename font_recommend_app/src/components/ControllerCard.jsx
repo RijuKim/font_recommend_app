@@ -4,10 +4,10 @@ import './Controllers.css'
 import { AiOutlineMinusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 
 export default function ControllerCard(props) {
-    const { isSelectChecked, index, selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
+    const { isSelectChecked, index, controller_weights,selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
 
     // 폰트별 가중치 조절 상태 관리
-    const [weight, setWeight] = useState(5);
+    const [weight, setWeight] = useState(controller_weights?controller_weights[index]:5);
 
     // 체크 버튼 클릭 상태 관리
     const [isChecked, setIsChecked] = useState(false);
@@ -57,6 +57,10 @@ export default function ControllerCard(props) {
     // 만약 fontName이 숫자로 시작하는 경우에 _를 붙여 fontFamily를 지정
     const modifiedSelectedFont = /^[0-9]/.test(selectedFont) ? `_${selectedFont}` : selectedFont;
 
+    // 만약 fontName이 공백 + 숫자로 끝나는 경우에 공백과 숫자를 제거한 fontFamily를 사용
+    const trimmedFontName = modifiedSelectedFont.replace(/ (\d+(\.\d+)?)$/, '');
+
+
     return (
         <div className='controller-container'>
             <div className={`controller-wrapper ${isChecked ? 'checked' : ''}`}>
@@ -78,13 +82,15 @@ export default function ControllerCard(props) {
                             onChange={handleWeightChange}
                         />
                         <span>{weight}</span>
+                       
                     </div>
                 </div>
                 <hr className='hr_line'/>
                 <div className='control-inform'>
                     {/* Todo - 선택한 폰트 style로 font-family 변경해줘야함 */}
                     <div>{selectedFont}</div>
-                    <div style={{fontFamily: `${modifiedSelectedFont}`}}>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
+                    <div>{index}</div>
+                    <div style={{fontFamily: `${trimmedFontName}`}}>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
                 </div>
             </div>
             {/* 선택한 폰트 취소 */}
