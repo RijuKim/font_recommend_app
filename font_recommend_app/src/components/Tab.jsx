@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import Controller from './Controller';
-import ControllerCard from './ControllerCard';
+// import ControllerCard from './ControllerCard';
 
-import Result from './Result';
+// import Result from './Result';
 import axios from 'axios';
 import './Tab.css'
 import Spinner from '../Spinner.gif'

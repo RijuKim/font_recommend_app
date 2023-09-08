@@ -7,7 +7,7 @@ export default function ControllerCard(props) {
     const { isSelectChecked, index, controller_weights,selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
 
     // 폰트별 가중치 조절 상태 관리
-    const [weight, setWeight] = useState(controller_weights?controller_weights[index]:5);
+    const [weight, setWeight] = useState(controller_weights.length>0?controller_weights[index]:5);
 
     // 체크 버튼 클릭 상태 관리
     const [isChecked, setIsChecked] = useState(false);
@@ -25,14 +25,13 @@ export default function ControllerCard(props) {
 
     // 가중치 조절 핸들러(기존코드랑 동일)
     const handleWeightChange = (event) => {
-        const newWeight = event.target.value;
+        const newWeight = parseInt(event.target.value);
         setWeight(newWeight); // 로컬 상태로 가중치 업데이트
         getWeightFromControllerCard(index, newWeight); // 부모 컴포넌트로 가중치 업데이트 전달
         console.log(newWeight); // 로컬 상태로 업데이트된 가중치 출력
     };
 
-
-
+    
     // 체크 버튼 클릭 핸들러
     const handleCheckButtonClick = () => {
         setIsChecked(!isChecked);
@@ -62,6 +61,7 @@ export default function ControllerCard(props) {
 
 
     return (
+
         <div className='controller-container'>
             <div className={`controller-wrapper ${isChecked ? 'checked' : ''}`}>
                 <div className='check-button-wrapper'>
@@ -82,14 +82,13 @@ export default function ControllerCard(props) {
                             onChange={handleWeightChange}
                         />
                         <span>{weight}</span>
-                       
+
                     </div>
                 </div>
                 <hr className='hr_line'/>
                 <div className='control-inform'>
                     {/* Todo - 선택한 폰트 style로 font-family 변경해줘야함 */}
                     <div>{selectedFont}</div>
-                    <div>{index}</div>
                     <div style={{fontFamily: `${trimmedFontName}`}}>{userInput ? userInput : '예시 문구를 입력하세요'}</div>
                 </div>
             </div>

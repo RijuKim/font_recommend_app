@@ -15,21 +15,23 @@ export default function Controller(props) {
     //단일 선택 상태 관리
     const [checkFonts, setCheckFonts] = useState(selectedFonts);
 
-    // //ControllerCard로부터 사용자 입력 가중치 상태 관리
-    const [weights, setWeights] = useState(tab_Weights.length > 0 ? tab_Weights : []);
+    // ControllerCard로부터 사용자 입력 가중치 상태 관리
+    const selectedFontsLength = selectedFonts.length;
+    const initialWeights = Array(selectedFontsLength).fill(5);
+    const [weights, setWeights] = useState(tab_Weights.length > 0 ? tab_Weights : initialWeights);
     // const [weights, setWeights] = useState(InitialWeights);
 
     //형태소, 골격, 굵기 통합 상태 관리
     const [total_weights, setTotalWeights] = useState(tab_totalWeights.length > 0 ? tab_totalWeights : [5, 5, 5]);
 
     // 형태소 조절 상태 관리
-    const [morp, setMorp] = useState(total_weights[0]==5?5:total_weights[0]);
+    const [morp, setMorp] = useState(total_weights[0]===5?5:total_weights[0]);
 
     // 골격 조절 상태 관리
-    const [skel, setSkel] = useState(total_weights[1]==5?5:total_weights[1]);
+    const [skel, setSkel] = useState(total_weights[1]===5?5:total_weights[1]);
 
     // 굵기 조절 상태 관리
-    const [thickness, setThick] = useState(total_weights[2]==5?5:total_weights[2]);
+    const [thickness, setThick] = useState(total_weights[2]===5?5:total_weights[2]);
 
     // 형태소 조절 핸들러
     const handleMorpChange = (event) => {
@@ -41,7 +43,7 @@ export default function Controller(props) {
     };
     
     // 골격 조절 핸들러
-        const handleSkelChange = (event) => {
+    const handleSkelChange = (event) => {
         const newSkel = parseInt(event.target.value);
         setSkel(newSkel);
         setTotalWeights([total_weights[0], newSkel, total_weights[2]]); // 로컬 상태로 가중치 업데이트
@@ -73,11 +75,12 @@ export default function Controller(props) {
         onResultButtonClick(); // Tab(부모 컴포넌트)로 클릭이벤트 전달
     };
 
-    //selectedFonts가 변경될 때마다 weights업데이트
-    useEffect(() => {
-        const InitialWeights = new Array(selectedFonts.length).fill(5);
-        setWeights(InitialWeights);
-    }, [selectedFonts]);
+    // //selectedFonts가 변경될 때마다 weights업데이트
+    // useEffect(() => {
+    //     const InitialWeights = new Array(selectedFonts.length).fill(5);
+    //     setWeights(InitialWeights);
+    //     console.log("selecetedFonts가 변경됨");
+    // }, [selectedFonts]);
 
 
 
@@ -93,10 +96,11 @@ export default function Controller(props) {
 
     //ControllerCard로부터 사용자 입력 가중치 가져오기&Tab으로 보내기 핸들러
     const getWeightFromControllerCard = (index, weight) => {
-
+        
         //ControllerCard로부터 사용자 입력 가중치 상태 관리
         weights[index] = parseInt(weight);
         setWeights([...weights]);
+        
     }
 
     //체크 버튼 클릭 핸들러
@@ -199,16 +203,18 @@ export default function Controller(props) {
                                     key={index}
                                     index={index}
                                     selectedFont={font}
-                                    controller_weights={weights}
+                                    controller_weights={weights} //Tab Weights -> Controller weights-> Controller Card
                                     userInput={userInput}
                                     getFontCheck={getFontCheck}
                                     getWeightFromControllerCard={getWeightFromControllerCard}
                                     isSelectChecked={selectAllChecked}
                                     handleSelectClick={handleSelectAllClick}
-                                    onRemoveCard={() => handleMinusButtonClick(index)}
+                                    onRemoveCard={() => handleMinusButtonClick(index)
+                                    }
                                 />
                             ))
                         )}
+                        {console.log("컨트롤러에서의 weight", weights)}
                     </ul>
                 </div>
             </div>
