@@ -6,6 +6,11 @@ import { AiOutlineMinusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 export default function ControllerCard(props) {
     const { isSelectChecked, index, controller_weights,selectedFont, getFontCheck, getWeightFromControllerCard, onRemoveCard, userInput } = props;
 
+    // controller_weights prop이 변경될 때 로컬 weight 상태를 업데이트
+    useEffect(() => {
+        setWeight(controller_weights.length > 0 ? controller_weights[index] : 5);
+    }, [controller_weights, index]);
+
     // 폰트별 가중치 조절 상태 관리
     const [weight, setWeight] = useState(controller_weights.length>0?controller_weights[index]:5);
 
@@ -69,6 +74,7 @@ export default function ControllerCard(props) {
                         <AiOutlineCheckCircle className={`check-icon ${isChecked ? 'checked' : ''}`}/></button>
                 </div>
                 {/* 폰트별 가중치 조절기 */}
+                {console.log("컨트롤러 카드에서의 가중치", weight)}
                 <div className='controller-bars'>
                     <div className='controller-weight'>
                         <span>가중치</span>

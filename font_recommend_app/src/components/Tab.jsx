@@ -23,10 +23,10 @@ export default function Tab() {
     const [userInput, setUserInput] = useState('')
 
     //Controller에서 받아온 사용자 입력 weight 데이터 저장 상태관리
-    const [Weights, setWeights] = useState(1);
+    const [Weights, setWeights] = useState([]);
 
     //Controller에서 받아온 사용자 입력 형태소, 골격, 굵기 데이터 저장 상태관리
-    const [totalWeights, setTotalWeights] = useState(1);
+    const [totalWeights, setTotalWeights] = useState([]);
 
     //로딩 상태 관리
     const [isLoading, setIsLoading] = useState(false);
@@ -79,6 +79,7 @@ export default function Tab() {
         setSelectedFonts((prevSelectedFonts) =>
             prevSelectedFonts.filter((_, i) => i !== index)
         );
+
     };
 
     //폰트 혼합하기 버튼 클릭 핸들러, 클릭 시 폰트 추천 시스템 api 호출
@@ -90,11 +91,11 @@ export default function Tab() {
         fetchDataFromAPI();
     }
     }
-    //폰트 혼합하기 버튼 클릭 핸들러, 클릭 시 폰트 추천 시스템 api 호출
+    //이전으로 돌아가기 버튼 클릭 핸들러
      const handleGoBackClick = () => {
         setSelectedFonts([]);
-        setWeights(1);
-        setTotalWeights(1);
+        setWeights([]);
+        setTotalWeights([]);
         setApiResponse('');
         setActiveTab(0); // "선택" 탭으로 변경
     }
@@ -106,15 +107,26 @@ export default function Tab() {
         if (selectedFont) {
             console.log('폰트가 선택됨', selectedFont);
             setSelectedFonts(prevSelectedFonts  => [...prevSelectedFonts , selectedFont]);
+            // 기존 weights 배열을 복제하여 새로운 배열을 만듭니다.
+            const newWeights = [...Weights];
+
+            // 새로운 배열의 마지막 요소에 정수 5를 추가합니다.
+            newWeights.push(5);
+
+            // 새로운 weights 배열을 설정합니다.
+            setWeights(newWeights);
+            
         }
         // console.log('현재 컨트롤러가 가지고 있는 선택된 폰트들:', selectedFonts);
     
     }, [selectedFont]);
+    
+
 
     useEffect(() => {
     
         console.log('현재 컨트롤러가 가지고 있는 선택된 폰트들:', selectedFonts);
-    
+        
     }, [selectedFonts]);
 
     // !폰트추천 시스템 api에서 데이터 받기

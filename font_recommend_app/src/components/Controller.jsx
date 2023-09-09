@@ -16,10 +16,12 @@ export default function Controller(props) {
     const [checkFonts, setCheckFonts] = useState(selectedFonts);
 
     // ControllerCard로부터 사용자 입력 가중치 상태 관리
+    
     const selectedFontsLength = selectedFonts.length;
     const initialWeights = Array(selectedFontsLength).fill(5);
     const [weights, setWeights] = useState(tab_Weights.length > 0 ? tab_Weights : initialWeights);
     // const [weights, setWeights] = useState(InitialWeights);
+
 
     //형태소, 골격, 굵기 통합 상태 관리
     const [total_weights, setTotalWeights] = useState(tab_totalWeights.length > 0 ? tab_totalWeights : [5, 5, 5]);
@@ -68,20 +70,16 @@ export default function Controller(props) {
     //삭제 버튼 클릭 핸들러
     const handleMinusButtonClick = (index) => {
         onRemoveFont(index, selectedFonts[index]);
+        // Weights 배열에서 해당 인덱스의 원소를 제거합니다.
+        const newWeights = [...weights];
+        newWeights.splice(index, 1); // 해당 인덱스의 원소를 제거
+        setWeights(newWeights);
     };
-
+   
     //폰트 혼합하기 버튼 클릭 핸들러
     const handleMixFontsClick = () => {
         onResultButtonClick(); // Tab(부모 컴포넌트)로 클릭이벤트 전달
     };
-
-    // //selectedFonts가 변경될 때마다 weights업데이트
-    // useEffect(() => {
-    //     const InitialWeights = new Array(selectedFonts.length).fill(5);
-    //     setWeights(InitialWeights);
-    //     console.log("selecetedFonts가 변경됨");
-    // }, [selectedFonts]);
-
 
 
     //업데이트된 weights값 넘겨주기
@@ -195,9 +193,11 @@ export default function Controller(props) {
                         </div>
                     </div>)}
                         {/* 폰트가 선택되는 만큼 해당 폰트의 ControllerCard 생성 */}
+                        {console.log("컨트롤러에서의 weight", weights)}
                         {selectedFonts.length === 0 ? (
                             <div className='initial-message'>먼저 폰트를 선택해주세요!</div>
                         ) : (
+                
                             selectedFonts.map((font, index) => (
                                 <ControllerCard
                                     key={index}
@@ -213,8 +213,8 @@ export default function Controller(props) {
                                     }
                                 />
                             ))
+                           
                         )}
-                        {console.log("컨트롤러에서의 weight", weights)}
                     </ul>
                 </div>
             </div>
