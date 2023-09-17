@@ -7,8 +7,8 @@ import PopupCard from './PopupCard';
 // 카테고리 및 대표 폰트들
 const initialCardData = [
     { category: '민부리체', titlefont: '맑은 고딕', children: '맑은 고딕', children2: '나눔스퀘어', children3: '타이포 씨고딕180', children4: '휴먼고딕', children5: '유토이미지 고딕 R', children6: '헬스셋고딕Bold', children7: 'DX모던고딕 RoundBold', children8: 'DX단선고딕 Thin' },
-    { category: '부리체', titlefont: 'KBIZ 한마음명조 M', children: 'KBIZ 한마음명조 M', children2: '나눔명조', children3: '제주명조', children4: 'HY견명조', children5: 'DX신문명조', children6: '빛의계승자체 Regular', children7: '조선일보명조', children8: '함초롬바탕체' },
-    { category: '손글씨', titlefont: '나눔손글씨 다행체', children: '나눔손글씨 다행체', children2: '나눔손글씨 반짝반짝 별', children3: '어비 나현체', children4: '어비 소윤체', children5: '온글잎 안될과학약체', children6: '나눔손글씨 중학생', children7: '나눔손글씨 펜', children8: '나눔손글씨 한윤체' },
+    { category: '부리체', titlefont: 'KBIZ 한마음명조 M', children: 'KBIZ 한마음명조 M', children2: '나눔명조', children3: '휴먼명조', children4: 'HY견명조', children5: 'DX신문명조', children6: '빛의계승자체 Regular', children7: '조선일보명조', children8: '함초롬바탕체' },
+    { category: '손글씨체', titlefont: '나눔손글씨 다행체', children: '나눔손글씨 다행체', children2: '나눔손글씨 반짝반짝 별', children3: '어비 나현체', children4: '어비 소윤체', children5: '온글잎 안될과학약체', children6: '나눔손글씨 중학생', children7: '나눔손글씨 펜', children8: '나눔손글씨 한윤체' },
     { category: '장식체', titlefont: 'HS겨울눈꽃체', children: 'HS겨울눈꽃체', children2: 'HS두꺼비체', children3: '가비아 봄바람체', children4: '창원단감아삭체 Bold', children5: '가나초콜릿체', children6: 'HanS 붐붐', children7: '도스필기', children8: 'DX동화나라 Bold' }
     // { category: '픽셀체', titlefont: '픽셀체', children: '116앵무부리', children2: ' 나눔굴림', children3: '나눔고딕', children4: '나눔고딕', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '나눔고딕' },
     // { category: '고전체', titlefont: '고전체', children: '산스체', children2: ' 나눔고딕', children3: '나눔고딕', children4: '116watermelon', children5: '나눔고딕', children6: '나눔고딕', children7: '나눔고딕', children8: '한겨레결체' },
